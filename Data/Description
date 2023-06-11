@@ -1,0 +1,4 @@
+This foolder contains the headlines datafile, which includes 548,629 headlines from 8 different German news outlets in 8 different categories from 01.01.2013 to 30.04.2023.
+Roughly 2% (11,109) were labeled manually into Negative and NotNegative.
+
+Additionally this folder contains full Articles in the category HomoEhe and Bürgergeld (they were scraped and processed for the Text Scaling - see R file there)
