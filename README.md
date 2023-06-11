@@ -5,3 +5,8 @@ In this project I analyse German news headlines.....
 In the following figure an overview of the approach is given:
 
 ![Approach.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Approach.JPG)
+
+
+## Classification with Naive Bayes
+
+![FeatureSelection.JPG]()
