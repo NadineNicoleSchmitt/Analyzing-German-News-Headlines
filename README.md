@@ -9,4 +9,4 @@ In the following figure an overview of the approach is given:
 
 ## Classification with Naive Bayes
 
-![FeatureSelection.JPG]()
+![FeatureSelection.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/FeatureSelection.JPG)
