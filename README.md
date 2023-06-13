@@ -1,10 +1,22 @@
 # Bad news are good news!? - Quantitative Text Analysis of German News Headlines
 
+##Introduction
+
 In this project I analyse German news headlines.....
                      
 In the following figure an overview of the approach is given:
 
 ![Approach.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Approach.JPG)
+
+## Data
+
+### Collecting Data
+#### Human Coding
+#### Naive guess
+
+### Descriptive Statistics
+
+## Dictionary Analysis
 
 
 ## Classification with Naive Bayes
