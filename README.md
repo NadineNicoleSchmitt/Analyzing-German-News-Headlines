@@ -1,6 +1,6 @@
 # Bad news are good news!? - Quantitative Text Analysis of German News Headlines
 
-##Introduction
+## Introduction
 
 In this project I analyse German news headlines.....
                      
