@@ -37,20 +37,11 @@ Refer to my  \href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-
 	\label{img:CountHeadlines}
 \end{figure}
 
-
-
-
-
-
-
-
-
-
-
 #### Human Coding
 #### Naive guess
 
 ### Scraping full article
+Additionally, for the **text-scaling analysis** of the political ideology of the news outlets, we used the packages ``rvest`` and ``xml2`` in R to collect **full news articles** from two categories in specific time frames:
 
 
 ### Descriptive Statistics
