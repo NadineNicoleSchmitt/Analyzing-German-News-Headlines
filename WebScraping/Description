@@ -1,5 +1,5 @@
-The headlines are scraped via Webscraper.io, MediaCloud and rvest/xml2.
-They are stored for each out seperately in a folder. 
+The headlines/articles are scraped via Webscraper.io, MediaCloud and rvest/xml2.
+They are stored for each outlet seperately in a folder. 
 Then we used the R scripts to bring them all into one specific format and stored them in the HeadlinesProcessed folder.
 Note that with face validating an errorList was produced, where we removed observations with NAs and other errors.
 They are then used in the PrepareDataForLabeling R script, in which all headlines are put together into one file and a random sample of them where human labeled.
