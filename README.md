@@ -150,7 +150,9 @@ We used the ``negative`` and ``negative positive`` keys in both dictionaries. Th
 Additionally, we translated the LSD dictionary into German using [googleLanguageR API](https://cran.r-project.org/web/packages/googleLanguageR/vignettes/setup.html).
 >__Note__: We did a *face validating check* after translation to remove duplicates (some English words have one single expression in German) and words with no negative sentiment in the German language.
 
-In the following an example is given how to use the API:
+<details>
+
+<summary>Example how to use googleLanguageR</summary>
 
 ```markdown
 library(googleLanguageR)
@@ -158,7 +160,6 @@ library(googleLanguageR)
 gl_auth("key.json") #key
 
 sampleWords = c("bad", "angry", "happy", "Germany", "European Union")
-
 
 translatedWords <- NULL
 for(i in sampleWords){
@@ -170,10 +171,16 @@ for(i in sampleWords){
 translatedWords
 #output: [1] "schlecht"          "wütend"            "Glücklich"         "Deutschland"       "europäische Union"
 ```
+</details>
+  
+  
+#### Final dictionaries
+
+Our final dictionaries contain following number of words:
 
 
-(\href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/dictionary_rauh.Rdata}{GitHub Dictionary Rauh})
-(\href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/dictionary_lsd.Rdata}{GitHub Translated Dictionary LSD})
+Both dictionaries are available here: -
+[Rauh](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/dictionary_rauh.Rdata) & [LSD] (https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/dictionary_lsd.Rdata)
 
 ## Limitations
 - We just used two existing dictionaries (available directly in quanteda). In a future analysis **other dictionaries**, such as the [NRC Word-Emotion Association Lexicon](https://rdrr.io/github/quanteda/quanteda.sentiment/man/data\_dictionary\_NRC.html) should be applied to see if we can reach better performance statistics. 
