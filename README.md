@@ -143,8 +143,28 @@ For our dictionary analysis, we used 2 different dictionaries:
 - [Rauh's German Political Sentiment Dictionary](https://rdrr.io/github/quanteda/quanteda.sentiment/man/data\_dictionary\_Rauh.html)
 - [LSD Lexicoder Sentiment Dictionary Dictionary](https://rdrr.io/github/quanteda/quanteda.sentiment/man/data\_dictionary\_LSD2015.html) 
 
+In both dictionaries, we used the ``negative`` and ``negative positive`` keys. The latter was chosen to identify phrases such as *nicht gut* or *keine glückliche*, which have an obviously negative sentiment. Additionally, we translated the LSD dictionary into German using \textit{googleLanguageR API}\footnote{Note that we did a face validating check after translation in order to remove duplicates (some English words have one single expression in German) and words, which have no negative sentiment in the German language.}.
 
-In both dictionaries, we used the \textbf{negative} and \textbf{negative positive} keys. The latter was chosen to identify phrases such as \textit{nicht gut} or\textit{keine glückliche}, which have an obviously negative sentiment. Additionally, we translated the LSD dictionary into German using \textit{googleLanguageR API}\footnote{Note that we did a face validating check after translation in order to remove duplicates (some English words have one single expression in German) and words, which have no negative sentiment in the German language.}.
+#### Translation of LSD
+
+```markdown
+library(googleLanguageR)
+
+gl_auth("key.json") #key
+
+sampleWords = c("bad", "angry", "happy", "Germany", "European Union")
+
+
+translatedWords <- NULL
+for(i in sampleWords){
+  translation <- gl_translate(i, target = "de", format = "text")
+  translation <- translation$translatedText #get translated text
+  translatedWords <- append(translatedWords, translation)
+}
+
+translatedWords
+#output: [1] "schlecht"          "wütend"            "Glücklich"         "Deutschland"       "europäische Union"
+```
 
 
 (\href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/dictionary_rauh.Rdata}{GitHub Dictionary Rauh})
