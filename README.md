@@ -45,6 +45,12 @@ Additionally, for the **text-scaling analysis** of the political ideology of the
 - **Homo Ehe** (26.06.2017 - 10.07.2017)
 - **Bürgergeld** (01.09.2022 - 08.01.2013)
 
+In the following the function to scrape an article from the outlet **Wirtschaftswoche** is shown:
+
+```markdown
+
+```
+
 
 ### Descriptive Statistics
 
