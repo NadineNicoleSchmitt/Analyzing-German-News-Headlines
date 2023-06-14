@@ -124,15 +124,15 @@ We can see, for example, that more than one-third of the headlines in the catego
 
 Additionally, the following figures provide insights on the count of headlines for each category over time. It is, for example, interesting to see that there were almost no headlines related to Coronavirus before 2020. 
 
-[BarPlot1.JPEG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/DescriptiveStatistics/BarPlot1.JPG)
-[Barplot2.JPEG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/DescriptiveStatistics/Barplot2.JPG)
+![BarPlot1.JPEG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/DescriptiveStatistics/BarPlot1.JPG)
+![Barplot2.JPEG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/DescriptiveStatistics/Barplot2.JPG)
 
 
 #### Ntoken
 
-Furthermore, we analyzed the length of the headlines\footnote{number of tokens}, which is represented in figure \ref{img:NToken}. We can see that the length of the headlines increased in all categories over time and that the headlines of the boulevard bild.de were always the longest, while SZ/ FAZ produced the shortest headlines. Note that on my \href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines}{GitHub Project} all plots for each category/outlet are provided.
+Furthermore, we analyzed the length of the headlines (number of tokens). We can see that the length of the headlines increased in all categories over time and that the headlines of the boulevard **bild.de** were always the longest, while **SZ/ FAZ** produced the shortest headlines. 
 
-
+![Ntokens.JPEG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/DescriptiveStatistics/Ntokens.JPEG)
 
 
 
