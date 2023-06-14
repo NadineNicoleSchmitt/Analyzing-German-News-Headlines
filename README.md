@@ -186,10 +186,11 @@ translatedWords
 
 Our final dictionaries contain following number of words:
 
-| **Dictionary**     | **Negative**        | **Neg-Positive**    | **Both**            |
-|:------------------:|:-------------------:|:-------------------:|:-------------------:|
-| Rauh               | Inhalt              | Inhalt              |Inhalt               |
-| LSD                | Inhalt              | Inhalt              |Inhalt               |
+| **Dictionary**     | **Negative**                  | **Neg-Positive**                   | **Both**            |
+|:------------------:|:-----------------------------:|:----------------------------------:|:-------------------:|
+| Rauh               | Inhalt                        | Inhalt                             |37,080               |
+| LSD                | 2334 *(original:2858)*        | 1564 *(original:1721)*             |3898                 |
+
 
 
 Both dictionaries are available here: -
