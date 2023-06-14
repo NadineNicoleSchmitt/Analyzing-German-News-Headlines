@@ -194,7 +194,7 @@ Because the dictionaries perform poorly (see [Performance dictionary](#performan
 <details>
 <summary>See here the word list we used for our LSD dictionary expansion  </summary>.
  
-[ExpansionLSDPreTrained.JPG](Dictionary/ExpansionLSDPreTrained.JPG)
+![ExpansionLSDPreTrained.JPG](Dictionary/ExpansionLSDPreTrained.JPG)
 </details>
   
 #### Final dictionaries
