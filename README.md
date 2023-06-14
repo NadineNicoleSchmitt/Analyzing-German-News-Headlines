@@ -181,6 +181,10 @@ translatedWords
 ```
 </details>
   
+#### Dictionary Expansion with Word Embeddings
+Because the dictionaries perform poorly (see [Performance dictionary](#performance-dictionary) , we expanded the dictionaries using word embeddings\footnote{We used the pre-trained word embeddings (see details of the word embeddings we used, the evaluation of them, etc. on my \href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines}{GitHub Project}).}. We used pre-trained word embeddings for our expansion because our self-trained embeddings would have expanded the dictionaries with words (such as \textit{deutsch} or \textit{europa}), which would have identified almost every headline as negative, i.e., the sensitivity would have been about 98\% (with very poor accuracy and specificity\footnote{we would have had a very high False Positive rate}.
+See appendix \ref{appendix:2.1} for the word lists we used for our dictionary expansion.
+  
   
 #### Final dictionaries
 
@@ -188,15 +192,26 @@ Our final dictionaries contain following number of words:
 
 | **Dictionary**     | **Negative**                  | **Neg-Positive**                   | **Both**            |
 |:------------------:|:-----------------------------:|:----------------------------------:|:-------------------:|
-| Rauh               | 19,750                        | 17, 330                            |37,080               |
+| Rauh               | 19,750                        | 17,330                             |37,080               |
 | LSD                | 2,334 *(original: 2,858)*     | 1,564 *(original: 1,721)*          |3,898                |
+| Rauh Expansion     | 19,750                        | 17,330                             |37,080               |
+| LSD Expansion      | 2,334 *(original: 2,858)*     | 1,564 *(original: 1,721)*          |3,898                |
 
 
+The dictionaries are available here: 
+- [Rauh](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/dictionary_rauh.Rdata) 
+- [LSD](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/dictionary_lsd.Rdata)
+- [Rauh Expansion](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/expansion_rauh_preTrained.Rdata) 
+- [LSD Expansion](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/expansion_lsd_preTrained.Rdata)
+  
+### Methodology
+We used the headlines to produce a dfm and removed numbers and punctuation\footnote{none of them are in our dictionary}, but no stopwords because some of them, such as \textit{gegen}, are included in our dictionaries. Note that we used unigrams because including negative-positive words in our dictionaries (see above) captures important bigrams. Finally, we did no trimming because the headlines are quite short compared to large articles, and one token appears almost once in a headline. Afterward, we applied the dfm to our dictionaries and computed the dictionary score\footnote{the proportion of negative words of a headline}. In order to evaluate our approach, we compared the scores to our human codings (every headline which contains at least one negative word was classified as negative), calculated performance statistics, and used the \textit{best dictionary} to explore the sentiment of the headlines  (we did some face validating check before). 
 
-Both dictionaries are available here: -
-[Rauh](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/dictionary_rauh.Rdata) & [LSD] (https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/dictionary_lsd.Rdata)
-
-## Limitations
+### Performance Dictionary
+### Face Validating
+### Results Dictionary
+  
+### Limitations Dictionary
 - We just used two existing dictionaries (available directly in quanteda). In a future analysis **other dictionaries**, such as the [NRC Word-Emotion Association Lexicon](https://rdrr.io/github/quanteda/quanteda.sentiment/man/data\_dictionary\_NRC.html) should be applied to see if we can reach better performance statistics. 
 - Additionally, this dictionary could expand the analysis to negative sentiment and provide further insights into **sentiments such as fear or anger** (e.g., do the headlines during the Covid-19 pandemic include more words with the fear sentiment?).
 -  Furthermore, we only used one dfm and made no feature selection, i.e., it would be interesting to see if we get better/different results when we use **other features**, such as removing stopwords. 
