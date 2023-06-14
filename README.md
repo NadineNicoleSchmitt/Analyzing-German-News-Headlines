@@ -138,10 +138,17 @@ Furthermore, we analyzed the length of the headlines (number of tokens). We can 
 ***
 ## Dictionary Analysis
 
+### Dictionaries
+For our dictionary analysis, we used 2 different dictionaries:
+- [Rauh's German Political Sentiment Dictionary](https://rdrr.io/github/quanteda/quanteda.sentiment/man/data\_dictionary\_Rauh.html)
+- [LSD Lexicoder Sentiment Dictionary Dictionary](https://rdrr.io/github/quanteda/quanteda.sentiment/man/data\_dictionary\_LSD2015.html) 
 
 
+In both dictionaries, we used the \textbf{negative} and \textbf{negative positive} keys. The latter was chosen to identify phrases such as \textit{nicht gut} or\textit{keine glückliche}, which have an obviously negative sentiment. Additionally, we translated the LSD dictionary into German using \textit{googleLanguageR API}\footnote{Note that we did a face validating check after translation in order to remove duplicates (some English words have one single expression in German) and words, which have no negative sentiment in the German language.}.
 
 
+(\href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/dictionary_rauh.Rdata}{GitHub Dictionary Rauh})
+(\href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/dictionary_lsd.Rdata}{GitHub Translated Dictionary LSD})
 
 ## Limitations
 - We just used two existing dictionaries (available directly in quanteda). In a future analysis **other dictionaries**, such as the [NRC Word-Emotion Association Lexicon](https://rdrr.io/github/quanteda/quanteda.sentiment/man/data\_dictionary\_NRC.html) should be applied to see if we can reach better performance statistics. 
