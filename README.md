@@ -23,7 +23,7 @@ We used [MediaCloud.org](https://search.mediacloud.org/search?) to collect the h
 {"_id":"DigitalisierungSueddeutsche","startUrl":["https://www.sueddeutsche.de/news/page/[1-97]?search=Digitalisierung&sort=date&all%5B%5D=dep&typ%5B%5D=article&sys%5B%5D=sz&catsz%5B%5D=alles&time=2013-01-01T00%3A00%2F2013-06-19T23%3A59&startDate=01.01.2013&endDate=31.12.2018","https://www.sueddeutsche.de/news/page/[1-97]?search=Digitalisierung&sort=date&all%5B%5D=dep&typ%5B%5D=article&sys%5B%5D=sz&catsz%5B%5D=alles&time=2013-01-01T00%3A00%2F2013-06-19T23%3A59&startDate=01.01.2019&endDate=31.12.2021","https://www.sueddeutsche.de/news/page/[1-25]?search=Digitalisierung&sort=date&all%5B%5D=dep&typ%5B%5D=article&sys%5B%5D=sz&catsz%5B%5D=alles&time=2013-01-01T00%3A00%2F2013-06-19T23%3A59&startDate=01.01.2022&endDate=30.04.2023"],"selectors":[{"id":"Title","parentSelectors":["_root"],"type":"SelectorText","selector":"em.entrylist__title","multiple":true,"regex":""},{"id":"Date","parentSelectors":["_root"],"type":"SelectorText","selector":"time","multiple":true,"regex":""},{"id":"URL","parentSelectors":["_root"],"type":"SelectorLink","selector":"a.entrylist__link","multiple":true}]}
 ```
 
-
+In figure \ref{img:headlinesDataset} a description of the variables in the dataset are given and in figure \ref{img:ExampleHeadlines} three sample observations of the dataset are shown.
 
 #### Human Coding
 
@@ -35,6 +35,11 @@ Roughly 2% (11,109) were labeled manually into Negative and NotNegative:
 Negative NotNegative 
 6546        4563 
 #### Naive guess
+
+In order to be able to evaluate our models, we perform human coding of about 2\% (11,109) of the headlines. We, randomly chose 2\% of the observations, and a team of 7 family members coded the headlines into \textbf{Negative} or \textbf{NotNegative}. We labeled the headlines according to the maximum coding\footnote{e.g., if 5 coded the headline as Negative and 2 as NotNegative, we assigned NotNegative}. We labeled the data according to the sentiment rather than the content of the headline. I.e., if a headline contains negative content but is expressed in positive/ neutral language, it is classified as NotNegative. Note that otherwise, it would be very hard to classify headlines because human (political) opinion would be included\footnote{E.g., a headline about Covid-19 lockdowns could be classified differently according to the opinion of the coder}. A full list of guidelines and sample codings are provided in appendix \ref{appendix:1}. In total, 6546 (~59\%) headlines were classified as Negative; 4563 (~41\%) were classified as NotNegative.
+
+\subsubsection{Naive guess}
+When analyzing performance statistics of our statistical models, we have to get an idea of what a specific value of accuracy means. When we predict a headline as Negative without using any model, one reasonable guess would be to use the mean outcome of the data\footnote{the naive guess is the most common outcome of the dependent variable = the human coding}. In our case, roughly 59\% of the headlines are Negative, which means that even by making the simplest possible guess, we would get an accuracy of 0.589252.
 
 ### Scraping full article
 Additionally, for the **text-scaling analysis** of the political ideology of the news outlets, we used the packages ``rvest`` and ``xml2`` in R to collect **full news articles** from two categories in specific time frames:
