@@ -3,4 +3,4 @@ Roughly 2% (11,109) were labeled manually into Negative and NotNegative:
 Negative NotNegative 
 6546        4563 
 
-Additionally this folder contains full Articles in the category HomoEhe and Bürgergeld (they were scraped and processed for the Text Scaling - see R file there)
+Additionally this folder contains full Articles in the category HomoEhe and Bürgergeld (they were scraped and processed for the Text Scaling)
