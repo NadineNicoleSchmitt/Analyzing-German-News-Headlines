@@ -183,13 +183,19 @@ translatedWords
   
 #### Dictionary Expansion with Word Embeddings
 Because the dictionaries perform poorly (see [Performance dictionary](#performance-dictionary)), we expanded the dictionaries using **word embeddings**
->__Note__: We used the **pre-trained word embeddings** (see all details of the word embeddings [here](#word-embeddings))for the expansion because our **self-trained embeddings** would have expanded the dictionaries with words *deutsch* or *europa*, which would have identified almost every headline as ``negative``, i.e., the **sensitivity** would have been about 98% (with very poor accuracy and specificity (we would have had a very high False Positive rate}).
+>__Note__: We used the **pre-trained word embeddings** (see all details of the word embeddings [here](#word-embeddings)) for the expansion because our **self-trained embeddings** would have expanded the dictionaries with words *deutsch* or *europa*, which would have identified almost every headline as ``negative``, i.e., the **sensitivity** would have been about 98% (with very poor accuracy and specificity (we would have had a very high False Positive rate}). 
 
- </details>
- <summary>See here the word list we used for our dictionary expansion </summary>.
+<details>
+<summary>See here the word list we used for our Rauh dictionary expansion  </summary>.
+ 
+![ExpansionRauhPreTrained.JPG](Dictionary/ExpansionRauhPreTrained.JPG)
+</details>
   
-  
- </details>
+<details>
+<summary>See here the word list we used for our LSD dictionary expansion  </summary>.
+ 
+[ExpansionRauhLSDTrained.JPG](Dictionary/ExpansionLSDPreTrained.JPG)
+</details>
   
 #### Final dictionaries
 
