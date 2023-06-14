@@ -55,19 +55,11 @@ The dataset includes following variables:
 Following 3 sample observations can be seen:
 ![ExampleHeadlines.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/ExampleHeadlines.JPG)
 
-
-
-
-
-
-
-Roughly 2% (11,109) were labeled manually into Negative and NotNegative: 
-Negative NotNegative 
-6546        4563 
 #### Naive guess
 
+When analyzing performance statistics of our statistical models, we have to get an idea of what a specific value of accuracy means. When we predict a headline as ``Negative`` or ``NotNegative`` without using any model, one reasonable guess would be to use the mean outcome of the data (the naive guess is the most common outcome of the dependent variable = the human coding). 
 
-When analyzing performance statistics of our statistical models, we have to get an idea of what a specific value of accuracy means. When we predict a headline as Negative without using any model, one reasonable guess would be to use the mean outcome of the data\footnote{the naive guess is the most common outcome of the dependent variable = the human coding}. In our case, roughly 59\% of the headlines are Negative, which means that even by making the simplest possible guess, we would get an accuracy of 0.589252.
+In our case, roughly 59% of the headlines are ``Negative``, which means that even by making the simplest possible guess, we would get an accuracy of **0.589252**.
 
 ### Scraping full article
 Additionally, for the **text-scaling analysis** of the political ideology of the news outlets, we used the packages ``rvest`` and ``xml2`` in R to collect **full news articles** from two categories in specific time frames:
