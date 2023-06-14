@@ -115,6 +115,26 @@ The R code to scrape articles for all otlets can be found [here](https://github.
 
 ### Descriptive Statistics
 
+In order to get an insight into our collected headlines, we made some **descriptive analyses** (see this [R script](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/DescriptiveStatistics/DescriptiveAnalysis.R)):
+
+![ParetoChart1.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/DescriptiveStatistics/ParetoChart1.JPG)
+![ParetoChart2.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/DescriptiveStatistics/ParetoChart2.JPG)
+
+We can see, for example, that more than one-third of the headlines in the category **Ukraine** were written by the outlet **FAZ** and only about 3% of them belong to the outlet **bild.de**. 
+
+Additionally, figure \ref{img:CountTime} provides insights on the count of headlines in the category Klimawandel and Coronavirus over time. It is interesting to see that there were almost no headlines related to Coronavirus before 2020. 
+
+
+#### Ntoken
+
+Furthermore, we analyzed the length of the headlines\footnote{number of tokens}, which is represented in figure \ref{img:NToken}. We can see that the length of the headlines increased in all categories over time and that the headlines of the boulevard bild.de were always the longest, while SZ/ FAZ produced the shortest headlines. Note that on my \href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines}{GitHub Project} all plots for each category/outlet are provided.
+
+
+
+
+
+
+
 ***
 ## Dictionary Analysis
 
