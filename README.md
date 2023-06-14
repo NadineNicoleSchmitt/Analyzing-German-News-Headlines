@@ -205,8 +205,8 @@ Our final dictionaries contain following number of words:
 |:------------------:|:------------------------------:|:----------------------------------:|:-------------------:|
 | Rauh               | 19,750                         | 17,330                             |37,080               |
 | LSD                | 2,334 *(original: 2,858)*      | 1,564 *(original: 1,721)*          |3,898                |
-| Rauh Expansion     | 19,750 + ${\color{violet} 440}$| 17,330                             |37,520               |
-| LSD Expansion      | 2,334 + ${\color{violet} 475}$ | 1,564 *(original: 1,721)*          |4,373                |
+| Rauh Expansion     | 19,750 + ${\color{red} 440}$   | 17,330                             |37,520               |
+| LSD Expansion      | 2,334 + ${\color{red} 475}$    | 1,564 *(original: 1,721)*          |4,373                |
 
 
 The dictionaries are available here: 
@@ -216,7 +216,51 @@ The dictionaries are available here:
 - [LSD Expansion](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/expansion_lsd_preTrained.Rdata)
   
 ### Methodology
-We used the headlines to produce a dfm and removed numbers and punctuation\footnote{none of them are in our dictionary}, but no stopwords because some of them, such as \textit{gegen}, are included in our dictionaries. Note that we used unigrams because including negative-positive words in our dictionaries (see above) captures important bigrams. Finally, we did no trimming because the headlines are quite short compared to large articles, and one token appears almost once in a headline. Afterward, we applied the dfm to our dictionaries and computed the dictionary score\footnote{the proportion of negative words of a headline}. In order to evaluate our approach, we compared the scores to our human codings (every headline which contains at least one negative word was classified as negative), calculated performance statistics, and used the \textit{best dictionary} to explore the sentiment of the headlines  (we did some face validating check before). 
+We used the headlines to produce a **document feature matrix (dfm)** and used following features:
+- we removed numbers and punctuation (because none of them are in our dictionaries)
+- we did not remove stopwords because some of them (e.g. *gegen*) are included in our dictionaries
+- we used unigrams because including negative-positive words in our dictionaries (see [Dictionaries](#dictionaries)) captures important bigrams
+- we did no trimming because the headlines are quite short compared to large articles, and one token appears almost once in a headline
+
+>__Note__: 
+  
+<details>
+<summary>See here the R code for creating the dfm when applying Rauhs dictionary  </summary>.
+ 
+```markdown
+#rauh
+corpus <- corpus(headlines, text_field = "title") #corpus
+          
+dfm_rauh <- corpus %>%
+  tokens() %>%
+  tokens(remove_punct = TRUE, remove_numbers = TRUE) %>% #remove numbers, punctuation
+  tokens_replace(pattern = c("nicht", "nichts", "kein",
+                             "keine", "keinen"),
+                 replacement = rep("not", 5)) %>%
+  tokens_compound(data_dictionary_Rauh, concatenator = " ")%>% #compound bi-gram negation patterns
+  dfm()
+```
+</details>
+  
+<details>
+<summary>See here the R code for creating the dfm when applying LSD dictionary  </summary>.
+ 
+```markdown
+#LSD
+corpus <- corpus(headlines, text_field = "title") #corpus
+          
+dfm_lsd <- corpus %>%
+  tokens() %>%
+  tokens(remove_punct = TRUE, remove_numbers = TRUE) %>% #remove numbers, punctuation
+  tokens_replace(pattern = c("nicht", "nichts", "kein",
+                             "keine", "keinen"),
+                 replacement = rep("not", 5)) %>%
+  tokens_compound(phrase(dictionary_lsd_neg_pos), concatenator = " ")%>% #compound bi-gram negation patterns
+  dfm()
+```
+</details>
+
+Afterward, we applied the dfm to our dictionaries and computed the dictionary score\footnote{the proportion of negative words of a headline}. In order to evaluate our approach, we compared the scores to our human codings (every headline which contains at least one negative word was classified as negative), calculated performance statistics, and used the \textit{best dictionary} to explore the sentiment of the headlines  (we did some face validating check before). 
 
 ### Performance Dictionary
 ### Face Validating
