@@ -191,4 +191,12 @@ All the calculated results can be seen on the [excel files](https://github.com/N
 ***
 ## Text Scaling - Wordfish
 
+## Further Limitations
+- We collected news headlines from eight different **categories** and 8 different news **outlets**, and it would be interesting to see if we get different results when including other categories (such as sports or finance) and more/ other outlets. 
+- We did not include **metadata** such as the gender of the author, and it would be interesting to see if this impacts the headline's sentiment. 
+- Besides, as described in our introduction, user-tracking technology to measure content reach grew throughout the 2010s. We, therefore, could expand the analysis to a **broader time frame** (e.g., starting in 2003) and see if we get different results in this earlier period 
+>__Note__: that collecting data for this time frame could be very hard.
+-  Going deeper into this, we could also perform a **causal inference using our headlines as a treatment**: We could analyze the causal relationship between headlines with negative sentiment (treatment) and the clicks of a headline 
+> __Note__: when using text as treatment randomization alone is not sufficient to identify the causal effect of a latent treatment, because there are other features in the headlines (such as content) which can have an impact on the click rate. Therefore one would have to control for observable cofounders).
+
 
