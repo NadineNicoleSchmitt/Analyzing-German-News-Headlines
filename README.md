@@ -72,7 +72,7 @@ Additionally, for the **text-scaling analysis** of the political ideology of the
 
 <details>
 
-<summary>function to scrape an article from the outlet **Wirtschaftswoche**</summary>
+<summary>function to scrape an article from the outlet Wirtschaftswoche</summary>
 
 ```markdown
 getWirtschaftsWoche <- function(url) {
@@ -185,6 +185,11 @@ translatedWords
 #### Final dictionaries
 
 Our final dictionaries contain following number of words:
+
+| **Dictionary**     | **Negative**        | **Neg-Positive**    | **Both**            |
+|:------------------:|:-------------------:|:-------------------:|:-------------------:|
+| Rauh               | Inhalt              | Inhalt              |Inhalt               |
+| LSD                | Inhalt              | Inhalt              |Inhalt               |
 
 
 Both dictionaries are available here: -
