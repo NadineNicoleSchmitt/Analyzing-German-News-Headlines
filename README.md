@@ -201,12 +201,12 @@ Because the dictionaries perform poorly (see [Performance dictionary](#performan
 
 Our final dictionaries contain following number of words:
 
-| **Dictionary**     | **Negative**                  | **Neg-Positive**                   | **Both**            |
-|:------------------:|:-----------------------------:|:----------------------------------:|:-------------------:|
-| Rauh               | 19,750                        | 17,330                             |37,080               |
-| LSD                | 2,334 *(original: 2,858)*     | 1,564 *(original: 1,721)*          |3,898                |
-| Rauh Expansion     | 19,750                        | 17,330                             |37,080               |
-| LSD Expansion      | 2,334 *(original: 2,858)*     | 1,564 *(original: 1,721)*          |3,898                |
+| **Dictionary**     | **Negative**                   | **Neg-Positive**                   | **Both**            |
+|:------------------:|:------------------------------:|:----------------------------------:|:-------------------:|
+| Rauh               | 19,750                         | 17,330                             |37,080               |
+| LSD                | 2,334 *(original: 2,858)*      | 1,564 *(original: 1,721)*          |3,898                |
+| Rauh Expansion     | 19,750 + ${\color{violet} 440}$| 17,330                             |37,520               |
+| LSD Expansion      | 2,334 + ${\color{violet} 475}$ | 1,564 *(original: 1,721)*          |4,373                |
 
 
 The dictionaries are available here: 
