@@ -2,9 +2,11 @@
 
 ## Introduction
 
-In this project I analyse German news headlines.....
-                     
-In the following figure an overview of the approach is given:
+The world has faced multiple crises in the last decade, including the migration crisis starting in 2015, the Covid-19 pandemic, and the Ukraine War. Hence, there is a large amount of negative news in terms of its content. Besides, due to the growth in user-tracking technologies throughout the 2010s to measure content reach, it has become a common fact that ``Bad news are good news``, which means that negative headlines reach more clicks/ attention. Therefore, in this project we analyse folowing question: 
+
+                  Have outlets started to drift towards increasing usage of negative sentiment in their headlines to make even *good/ neutral* news (in terms of its content) sentimentally more negative?
+
+In order to find answers to this question, we applied several quantitative text analysis approaches, which is represented in following figure: 
 
 ![Approach.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Approach.JPG)
 
