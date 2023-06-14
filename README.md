@@ -227,7 +227,7 @@ We used the headlines to produce a **document feature matrix (dfm)** and used fo
 <details>
 <summary>See here the R code for creating the dfm when applying Rauhs dictionary  </summary>.
  
-```markdown
+```R markdown
 #rauh
 corpus <- corpus(headlines, text_field = "title") #corpus
           
