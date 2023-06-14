@@ -26,9 +26,28 @@ We used [MediaCloud.org](https://search.mediacloud.org/search?) to collect the h
 The scraped headlines were then exported as csv/ xlsx files and can be found in this [folder](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/tree/main/WebScraping) (they are stored for each outlet in a seperate folder), which also contains R scripts, which we used to bring the headlines into one specific format (see the resulted datasets in the [HeadlineProcessed folder](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/tree/main/WebScraping/HeadlinesProcessed).
 > __Note__: we produced with *face validating* an [ErrorList](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WebScraping/ErrorList.xlsx) in order to remove headlines with NAs and other errors in our collected data.
 
-Finally, we used [PrepareDataForLabeling.R](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WebScraping/PrepareDataForLabeling.R) to put headlines from all outlets into one single dataframe and a random sample of them where human labeled.
+Finally, we used [PrepareDataForLabeling.R](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WebScraping/PrepareDataForLabeling.R) to put headlines from all outlets into one single dataframe and a **random sample** of them where human labeled.
 
 #### Human Coding
+
+In order to be able to evaluate our models, we perform **human coding** of about **2% (11,109)** of the headlines. Therefore, we randomly chose 2% of the headlines, and a team of 7 family members coded the headlines into ``Negative`` or ``NotNegative``. We labeled the headlines according to the **maximum coding** (e.g., if 5 coded the headline as ``Negative`` and 2 as ``NotNegative``, we assigned ``Negative``).
+
+We labeled the data according to the **sentiment** rather than the content of the headline. I.e., if a headline contains negative content but is expressed in positive/ neutral language, it is classified as ``NotNegative``. 
+> __Note__: Otherwise, it would be very hard to classify headlines because human (political) opinion would be included (e.g. a headline about Covid-19 lockdowns could be classified differently according to the opinion of the coder). 
+
+In the following, a list of **coding guidelines** is given:
+
+![CountHeadlines.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/CountHeadlines.JPG)
+![CountHeadlines.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/CountHeadlines.JPG)
+
+
+
+
+and sample codings are provided in appendix \ref{appendix:1}. In total, 6546 (~59\%) headlines were classified as Negative; 4563 (~41\%) were classified as NotNegative.
+
+
+
+
 
 #### Final Dataset
 
@@ -40,15 +59,18 @@ In figure \ref{img:headlinesDataset} a description of the variables in the datas
 
 
 
-This foolder contains the headlines datafile, which includes 548,629 headlines from 8 different German news outlets in 8 different categories from 01.01.2013 to 30.04.2023.
+
+
+
+
+
+
 Roughly 2% (11,109) were labeled manually into Negative and NotNegative: 
 Negative NotNegative 
 6546        4563 
 #### Naive guess
 
-In order to be able to evaluate our models, we perform human coding of about 2\% (11,109) of the headlines. We, randomly chose 2\% of the observations, and a team of 7 family members coded the headlines into \textbf{Negative} or \textbf{NotNegative}. We labeled the headlines according to the maximum coding\footnote{e.g., if 5 coded the headline as Negative and 2 as NotNegative, we assigned NotNegative}. We labeled the data according to the sentiment rather than the content of the headline. I.e., if a headline contains negative content but is expressed in positive/ neutral language, it is classified as NotNegative. Note that otherwise, it would be very hard to classify headlines because human (political) opinion would be included\footnote{E.g., a headline about Covid-19 lockdowns could be classified differently according to the opinion of the coder}. A full list of guidelines and sample codings are provided in appendix \ref{appendix:1}. In total, 6546 (~59\%) headlines were classified as Negative; 4563 (~41\%) were classified as NotNegative.
 
-\subsubsection{Naive guess}
 When analyzing performance statistics of our statistical models, we have to get an idea of what a specific value of accuracy means. When we predict a headline as Negative without using any model, one reasonable guess would be to use the mean outcome of the data\footnote{the naive guess is the most common outcome of the dependent variable = the human coding}. In our case, roughly 59\% of the headlines are Negative, which means that even by making the simplest possible guess, we would get an accuracy of 0.589252.
 
 ### Scraping full article
