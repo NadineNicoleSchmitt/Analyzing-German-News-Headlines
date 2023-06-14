@@ -222,7 +222,7 @@ We used the headlines to produce a **document feature matrix (dfm)** and used fo
 - we used unigrams because including negative-positive words in our dictionaries (see [Dictionaries](#dictionaries)) captures important bigrams
 - we did no trimming because the headlines are quite short compared to large articles, and one token appears almost once in a headline
 
->__Note__: 
+>__Note__: The negative-positive dictionaries have following pattern: ``NOT`` positive word (e.g. NOT gut); hence we have to compound bi-gram negation patterns by creating the dfm
   
 <details>
 <summary>See here the R code for creating the dfm when applying Rauhs dictionary  </summary>.
