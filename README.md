@@ -122,7 +122,10 @@ In order to get an insight into our collected headlines, we made some **descript
 
 We can see, for example, that more than one-third of the headlines in the category **Ukraine** were written by the outlet **FAZ** and only about 3% of them belong to the outlet **bild.de**. 
 
-Additionally, figure \ref{img:CountTime} provides insights on the count of headlines in the category Klimawandel and Coronavirus over time. It is interesting to see that there were almost no headlines related to Coronavirus before 2020. 
+Additionally, the following figures provide insights on the count of headlines for each category over time. It is, for example, interesting to see that there were almost no headlines related to Coronavirus before 2020. 
+
+[BarPlot1.JPEG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/DescriptiveStatistics/BarPlot1.JPG)
+[Barplot2.JPEG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/DescriptiveStatistics/Barplot2.JPG)
 
 
 #### Ntoken
