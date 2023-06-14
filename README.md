@@ -35,11 +35,18 @@ In order to be able to evaluate our models, we perform **human coding** of about
 We labeled the data according to the **sentiment** rather than the content of the headline. I.e., if a headline contains negative content but is expressed in positive/ neutral language, it is classified as ``NotNegative``. 
 > __Note__: Otherwise, it would be very hard to classify headlines because human (political) opinion would be included (e.g. a headline about Covid-19 lockdowns could be classified differently according to the opinion of the coder). 
 
-In the following, a list of **coding guidelines** is given:
+<details>
+<summary>See a list of **coding guidelines**</summary>
 
 ![RulesHumanCoding.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/RulesHumanCoding.JPG)
+</details>
 
-Here some sample codings are shown:
+
+<details>
+<summary>Some sample codings</summary>
+![ExampleHumanCoding.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/ExampleHumanCoding.JPG)
+</details>
+ 
 
 ![ExampleHumanCoding.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/ExampleHumanCoding.JPG)
 
@@ -66,7 +73,9 @@ Additionally, for the **text-scaling analysis** of the political ideology of the
 - **Homo Ehe** (26.06.2017 - 10.07.2017)
 - **Bürgergeld** (01.09.2022 - 08.01.2013)
 
-In the following the function to scrape an article from the outlet **Wirtschaftswoche** is shown:
+<details>
+
+<summary>function to scrape an article from the outlet **Wirtschaftswoche**</summary>
 
 ```markdown
 getWirtschaftsWoche <- function(url) {
@@ -110,6 +119,8 @@ getWirtschaftsWoche <- function(url) {
   return(final)
 } 
 ```
+</details>
+           
 The R code to scrape articles for all outlets can be found [here](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WebScraping/scrapeArticles.R). 
 > __Note__: As we do not want to have each article as an *individual* document, we **collapsed** the data to the **outlet level** (i.e. we have one single document for each outlet). The collapsed articles for each outlet are then stored in a dataframe ([articlesHomoEhe.Rdata](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/articlesHomoEhe.Rdata), [ariclesBuergergeld.Rdata](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/articlesBuergergeld.Rdata)). 
 
