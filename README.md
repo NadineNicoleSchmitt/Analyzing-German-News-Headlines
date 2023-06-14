@@ -141,11 +141,16 @@ Furthermore, we analyzed the length of the headlines (number of tokens). We can 
 ### Dictionaries
 For our dictionary analysis, we used 2 different dictionaries:
 - [Rauh's German Political Sentiment Dictionary](https://rdrr.io/github/quanteda/quanteda.sentiment/man/data\_dictionary\_Rauh.html)
-- [LSD Lexicoder Sentiment Dictionary Dictionary](https://rdrr.io/github/quanteda/quanteda.sentiment/man/data\_dictionary\_LSD2015.html) 
+- [LSD Lexicoder Sentiment Dictionary](https://rdrr.io/github/quanteda/quanteda.sentiment/man/data\_dictionary\_LSD2015.html) 
 
-In both dictionaries, we used the ``negative`` and ``negative positive`` keys. The latter was chosen to identify phrases such as *nicht gut* or *keine glückliche*, which have an obviously negative sentiment. Additionally, we translated the LSD dictionary into German using \textit{googleLanguageR API}\footnote{Note that we did a face validating check after translation in order to remove duplicates (some English words have one single expression in German) and words, which have no negative sentiment in the German language.}.
+We used the ``negative`` and ``negative positive`` keys in both dictionaries. The latter was chosen to identify phrases such as *nicht gut* or *keine glückliche*, which have an obviously negative sentiment. 
 
 #### Translation of LSD
+
+Additionally, we translated the LSD dictionary into German using [googleLanguageR API](https://cran.r-project.org/web/packages/googleLanguageR/vignettes/setup.html).
+>__Note__: We did a *face validating check* after translation to remove duplicates (some English words have one single expression in German) and words with no negative sentiment in the German language.
+
+In the following an example is given how to use the API:
 
 ```markdown
 library(googleLanguageR)
