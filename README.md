@@ -155,7 +155,8 @@ In both dictionaries, we used the \textbf{negative} and \textbf{negative positiv
 - Additionally, this dictionary could expand the analysis to negative sentiment and provide further insights into **sentiments such as fear or anger** (e.g., do the headlines during the Covid-19 pandemic include more words with the fear sentiment?).
 -  Furthermore, we only used one dfm and made no feature selection, i.e., it would be interesting to see if we get better/different results when we use **other features**, such as removing stopwords. 
 -  Besides, we did not apply **weighted vector representations** (only raw word counts instead of tf-idf weighting) and also used no **weighted scores** in the dictionaries. It would be interesting to see if we get different results when using **tf-idf weighting** and using weighted dictionaries/using the cosine similarity scores from our dictionary expansion with word embeddings. 
--  Moreover, as seen above, we should further investigate if headlines containing the same amount of negative words but are longer (i.e., also containing some neutral/ positive words) should be considered less negative. 
+-  Moreover, as seen 
+above, we should further investigate if headlines containing the same amount of negative words but are longer (i.e., also containing some neutral/ positive words) should be considered less negative. 
 - Finally, as we only get slightly better results when expanding our dictionary with word embeddings, we should use in further research **self-trained word embeddings** on our specific context (but rather than only use the headlines we should train them on large corpora, i.e., the full news articles).
 
 ***
@@ -227,7 +228,7 @@ All the calculated results can be seen on the [excel files](https://github.com/N
 ## Further Limitations
 - We collected news headlines from eight different **categories** and 8 different news **outlets**, and it would be interesting to see if we get different results when including other categories (such as sports or finance) and more/ other outlets. 
 - We did not include **metadata** such as the gender of the author, and it would be interesting to see if this impacts the headline's sentiment. 
-- Besides, as described in our introduction, user-tracking technology to measure content reach grew throughout the 2010s. We, therefore, could expand the analysis to a **broader time frame** (e.g., starting in 2003) and see if we get different results in this earlier period 
+- Besides, as described in our #introduction, user-tracking technology to measure content reach grew throughout the 2010s. We, therefore, could expand the analysis to a **broader time frame** (e.g., starting in 2003) and see if we get different results in this earlier period 
 >__Note__: collecting data for this time frame could be very hard.
 -  Going deeper into this, we could also perform a **causal inference using our headlines as a treatment**: We could analyze the causal relationship between headlines with negative sentiment (treatment) and the clicks of a headline 
 > __Note__: when using text as treatment randomization alone is not sufficient to identify the causal effect of a latent treatment, because there are other features in the headlines (such as content) which can have an impact on the click rate. Therefore one would have to control for observable cofounders).
