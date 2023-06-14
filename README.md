@@ -12,8 +12,8 @@ In order to find answers to this question, we applied several quantitative text 
 
 ## Data
 ### Collecting Data
-For our analysis, we collected in total 548,629 ${\color{violet}German news headlines}$ over a ``10-year time frame`` (01.01.2013 to 30.04.2023) from ``8 different news outlets`` and ``8 different categories``:
-![Approach.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Approach.JPG)
+For our analysis, we collected in total 548,629 ${\color{violet} 548,629 \space German \space news \space headlines}$ over a ``10-year time frame`` (01.01.2013 to 30.04.2023) from ``8 different news outlets`` and ``8 different categories``:
+![CountHeadlines.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/CountHeadlines.JPG)
 
 
 
@@ -44,6 +44,9 @@ Refer to my  \href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-
 
 #### Human Coding
 #### Naive guess
+
+### Scraping full article
+
 
 ### Descriptive Statistics
 
