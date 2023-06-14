@@ -25,19 +25,15 @@ We used [MediaCloud.org](https://search.mediacloud.org/search?) to collect the h
 
 
 
-
-
-
-Refer to my  \href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines}{GitHub Project} to see a detailed description of how we scraped the data and prepared them for our analysis. The 548,629 news headlines dataset can be found \href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/headlines.Rdata}{here}. In figure \ref{img:headlinesDataset} a description of the variables in the dataset are given and in figure \ref{img:ExampleHeadlines} three sample observations of the dataset are shown. Additionally, we collected full news articles from two categories (HomoEhe and Bügergeld) in specific time frames for our text-scaling analysis of the political ideology of news outlets (see \href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines}{GitHub Project} for full description). 
-
-\begin{figure}[H]
-	\centering
-	\makebox[\textwidth]{\includegraphics[width=\textwidth]{CountHeadlines.JPG}}
-	\caption{Count of headlines in each category and for each outlet}
-	\label{img:CountHeadlines}
-\end{figure}
-
 #### Human Coding
+
+
+
+
+This foolder contains the headlines datafile, which includes 548,629 headlines from 8 different German news outlets in 8 different categories from 01.01.2013 to 30.04.2023.
+Roughly 2% (11,109) were labeled manually into Negative and NotNegative: 
+Negative NotNegative 
+6546        4563 
 #### Naive guess
 
 ### Scraping full article
