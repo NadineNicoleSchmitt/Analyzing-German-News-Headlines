@@ -47,11 +47,11 @@ In total, 6546 (~59%) headlines were classified as ``Negative``; 4563 (~41%) wer
 
 #### Final Dataset
 
-See the headlines.Rdata for the whole final dataset.
+The final labeled dataset can be found [here](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/headlines.Rdata).
+The dataset includes following variables:
 
+![HeadlineDataset.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/HeadlineDataset.JPG)
 
-
-In figure \ref{img:headlinesDataset} a description of the variables in the dataset are given and in figure \ref{img:ExampleHeadlines} three sample observations of the dataset are shown.
 
 
 
