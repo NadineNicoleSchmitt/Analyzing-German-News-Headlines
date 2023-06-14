@@ -48,7 +48,46 @@ Additionally, for the **text-scaling analysis** of the political ideology of the
 In the following the function to scrape an article from the outlet **Wirtschaftswoche** is shown:
 
 ```markdown
+getWirtschaftsWoche <- function(url) {
 
+  #read the url
+  htmlPage <- read_html(url)
+  
+  #identify all nodes with text
+  textNodesAll <- htmlPage %>% xml_find_all('//p') 
+  
+  #identify elements, we don't need
+  textNodesRemove1 <-  html_elements(htmlPage, ".c-leadtext")
+  textNodesRemove2 <-  html_elements(htmlPage, ".modalwindow__ctext")
+  textNodesRemove3 <-  html_elements(htmlPage, ".modalwindow__footer-caption")
+  textNodesRemove4 <-  html_elements(htmlPage, ".modalwindow__cpt")
+  textNodesRemove5 <-  html_elements(htmlPage, "em")
+  
+  #now remove unwanted elements
+  textNodes <- textNodesAll[!(textNodesAll %in% textNodesRemove1)]
+  textNodes <- textNodes[!(textNodes %in% textNodesRemove2)]
+  textNodes <- textNodes[!(textNodes %in% textNodesRemove3)]
+  textNodes <- textNodes[!(textNodes %in% textNodesRemove4)]
+  textNodes <- textNodes[!(textNodes %in% textNodesRemove5)]
+    
+  #convert elements to text
+  textP1 <- textNodes[1:(length(textNodes)-1)] %>% xml2::xml_text()
+  
+  #get string of last entry
+  textp2 <- textNodes[length(textNodes)] %>% xml2::xml_text()
+  #now remove all "em" text only if we fouond any em's
+  if (length(textNodesRemove5) > 0) {
+    for (i in 1: length(textNodesRemove5)) {textp2 <- wwRString(textp2, textNodesRemove5[i] %>% xml2::xml_text())}
+  }
+  
+  #remove header
+  textFinal = paste( textP1[2:(length(textP1))], textp2)
+  
+  #collaps all text together in one single string
+  final <- paste(textFinal,collapse= " ")
+  
+  return(final)
+} 
 ```
 
 
