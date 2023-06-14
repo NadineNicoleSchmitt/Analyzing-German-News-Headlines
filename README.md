@@ -132,10 +132,7 @@ Additionally, the following figures provide insights on the count of headlines f
 
 Furthermore, we analyzed the length of the headlines (number of tokens). We can see that the length of the headlines increased in all categories over time and that the headlines of the boulevard **bild.de** were always the longest, while **SZ/ FAZ** produced the shortest headlines. 
 
-![Ntokens.JPEG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/DescriptiveStatistics/Ntokens.JPEG)
-
-
-
+![Ntokens.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/DescriptiveStatistics/NTokens.JPG)
 
 
 ***
