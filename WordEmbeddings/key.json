@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "translation-369002",
+  "private_key_id": "1c5693cce9f2f805a4667c78100c51eb8d75549f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQDEFXGAL016hAnY\nCBtvAiiSK3tlqzb62MbBp+YhzH0FxrlJEjyluebD4uB9HnRh0+HSavbKO2g/ZY3c\npGfeO0tJVfzpSR3JPLMClJG2yBJLlvQUJ/LLybbgWcFVJLnuHFeIM9VS84ClXLg6\nbp5T0Xts0ztOyQFF9bxhxUI+VbR6v1wWSpj+xz3stdnjamdqF3Z+rISU3mekJd1R\ngonRcZznJpXTdwrqutB/bbF4gtsppByUMrpkEE43pVMu5kmvwcxdja4sHiR88ShX\ns0m3ZTt6ZQY6+NvkxUX0KagJPb8rESRNSoDfuP63o+q382mmAh34Y48Y8vPcNhrF\n0EbhrdMtAgMBAAECgf8woyEEKreNLDNE4r3rSx3FJAP3tABvOFYUsxDiUVaxmBld\nhqiEcxhKfnwwjN1RZr0c9GtCvnmdQBNwJ1ecSBjkl++j7f71a5j7it6Z+AaRuV/R\noBcZdW9nNtw9wl5cMauEnVbMvJmsatNHqyiaodt7oumTIUivkcSoe8VysM+TonP4\nplOb77PpNTVivafEbs109R5tRH+DdlQet4LYisLbeJYG2trBgHEEK/MRyGbnT9YC\na9B0YVW2XdXBxFUPKauR2G4aZBD8daKR6gdkJ9KPas0laX3ZBK7b+p/wxh6l8bMb\np+RolMes+bs+H0aaT1VPWrMRVEYjSokQF/TkxzECgYEA+EtPaBb406iY1NpX+30L\nstEKTbstcAQIMU/fSAHebd1wboo/k9dtWFXUFVlgeF9gK64Zr4CUUs0Rk478OnFh\n737TFEjDrSgayl3ktu6ubddet7U1pDKvhIopinqi6HJsGSwU7F+tMNA5pNKeVvyK\nsiKj8neu9zpmSKtHeTcYC+UCgYEAyitSrtqm28N3Px1u+wLdHtTmccX93k2hVP9w\nVbcr8vimQX/hRDwyeBcAjQoKT+WfsyGInooB3tKVksfRgteXYPje4qmeUYcgdgvA\nEIt/hDMxMgv1DlVSGpm5oOe0zPTcFP+GNYAnQ8wuLNPH5Wid+nhEnPHHphZ2beee\n5egghakCgYEA6KuB1LO6JnWWCdg1nEgYf0+eTSr6sD5HAxaq0EpYCjH42s0YOM0l\n/SIopHzlhscxUp1KGojt9Q2Py+uwdn+rW4dH+3kYTJoJSNtlqPrPX8TzUEkx5BVP\nHm9t8ANtx0759zi0vrAFlnl5mvd3Q2JSAg2t/lejEK+cC7rdNjynfvUCgYBu0M5y\nn9GEdqEfjG+v0UMJSmPCi2d7egvrvlSB93R0q0zebE07DNAROXKI3K8IWnJuSvxL\nApTB4aYxHaw+zxPgCKqLjbQFNk9ZxVkS+JP+D91wdFNv9t6ZTBgPFdLp4XHdZK7Z\nFpTvObU5xyA0JGMrzs61RGZOKNPjrGlR1io1eQKBgDNe8rG3L9FL8UXgg72wF3ha\nPLjpAfq4lmZ25mMuyExe6XaVVqKm9g+rsytx5+N7gHukm1dluUgu+lo4y5TCIAT8\nrFisOhiVd6eb5UGMbMvodJFOg007NHJ7Z3p9elNH4ApHemkfnaonTnpRShWOUfFs\nMD8iowPFchd6TeCzcQ5b\n-----END PRIVATE KEY-----\n",
+  "client_email": "nadine-schmitt@translation-369002.iam.gserviceaccount.com",
+  "client_id": "112815982136408767174",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nadine-schmitt%40translation-369002.iam.gserviceaccount.com"
+}
