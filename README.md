@@ -11,8 +11,26 @@ In order to find answers to this question, we applied several quantitative text 
 ![Approach.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Approach.JPG)
 
 ## Data
-
 ### Collecting Data
+For our analysis, we collected $\textcolor{violet}{German news headlines)$ over a ``10-year time frame`` (01.01.2013 to 30.04.2023) from ``8 different news outlets`` and ``8 different categories```. (see figure \ref{img:CountHeadlines}) and got in total 548,629 news headlines. Refer to my  \href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines}{GitHub Project} to see a detailed description of how we scraped the data and prepared them for our analysis. The 548,629 news headlines dataset can be found \href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/headlines.Rdata}{here}. In figure \ref{img:headlinesDataset} a description of the variables in the dataset are given and in figure \ref{img:ExampleHeadlines} three sample observations of the dataset are shown. Additionally, we collected full news articles from two categories (HomoEhe and Bügergeld) in specific time frames for our text-scaling analysis of the political ideology of news outlets (see \href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines}{GitHub Project} for full description). 
+
+\begin{figure}[H]
+	\centering
+	\makebox[\textwidth]{\includegraphics[width=\textwidth]{CountHeadlines.JPG}}
+	\caption{Count of headlines in each category and for each outlet}
+	\label{img:CountHeadlines}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
 #### Human Coding
 #### Naive guess
 
