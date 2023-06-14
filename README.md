@@ -182,7 +182,62 @@ translatedWords
 </details>
   
 #### Dictionary Expansion with Word Embeddings
-Because the dictionaries perform poorly (see [Performance dictionary](#performance-dictionary)), we expanded the dictionaries using **word embeddings**
+Because the dictionaries perform poorly (see [Performance dictionary](#performance-dictionary)), we expanded the negative dictionaries (not negative-positive) using **word embeddings**:
+
+<details>
+<summary> R code extension of Rauh negative dictionary   </summary>.
+
+  ``` markdown
+load("preTrained.Rdata") #load word embeddings
+emb <- preTrained
+
+#1) extract words from emb which are in rauh dictionary
+rauh_emb <- emb[rownames(emb) %in% data_dictionary_Rauh$negative,]
+
+#2) calculate mean embedding vector of the rauh dictionary words
+rauh_emb_mean <- colMeans(rauh_emb) #is a numeric vector
+
+#3) calculate the similarity between the mean rauh vector and every other word in our embeddings
+target_sim <- sim2 (x=emb,
+                    y= matrix(rauh_emb_mean, nrow=1))
+
+#4) what are the 500 words that have the highest cosine similarity with the mean rauh vector?
+top500 <- names(sort(target_sim[,1], decreasing = TRUE))[1:500]
+
+table(top500 %in% data_dictionary_Rauh$negative) #267 of them are in our dictionary
+
+expansion_rauh_pre <- top500[!top500 %in% data_dictionary_Rauh$negative] #233
+save(expansion_rauh_pre, file= "expansion_rauh_preTrained.Rdata")
+```
+</details>
+  
+<details>
+<summary> R code extension of LSD negative dictionary   </summary>.
+
+``` markdown
+load("preTrained.Rdata") #load word embeddings
+emb <- preTrained
+       
+#1) extract words from emb which are in lsd dictionary
+lsd_emb <- emb[rownames(emb) %in% dictionary_lsd_neg,]
+
+#2) calculate mean embedding vector of the lsd dictionary words
+lsd_emb_mean <- colMeans(lsd_emb) #is a numeric vector
+
+#3) calculate the similarity between the mean lsd vector and every other word in our embeddings
+target_sim <- sim2 (x=emb,
+                    y= matrix(lsd_emb_mean, nrow=1))
+
+#4) what are the 500 words that have the highest cosine similarity with the mean rauh vector?
+top500 <- names(sort(target_sim[,1], decreasing = TRUE))[1:100]
+
+table(top500 %in% dictionary_lsd_neg) #108 of them are in our dictionary
+
+expansion_lsd_pre <- top500[!top500 %in% dictionary_lsd_neg] #392
+save(expansion_lsd_pre, file ="expansion_lsd_preTrained.Rdata")
+```
+</details> 
+
 >__Note__: We used the **pre-trained word embeddings** (see all details of the word embeddings [here](#word-embeddings)) for the expansion because our **self-trained embeddings** would have expanded the dictionaries with words *deutsch* or *europa*, which would have identified almost every headline as ``negative``, i.e., the **sensitivity** would have been about 98% (with very poor accuracy and specificity (we would have had a very high False Positive rate}). 
 
 <details>
