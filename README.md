@@ -43,6 +43,7 @@ We labeled the data according to the **sentiment** rather than the content of th
 
 <details>
 <summary>Some sample codings</summary>
+  
 ![ExampleHumanCoding.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/ExampleHumanCoding.JPG)
 </details>
  
