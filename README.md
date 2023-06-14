@@ -183,9 +183,13 @@ translatedWords
   
 #### Dictionary Expansion with Word Embeddings
 Because the dictionaries perform poorly (see [Performance dictionary](#performance-dictionary)), we expanded the dictionaries using **word embeddings**
->__Note__: We used the pre-trained word embeddings (see details of the word embeddings we used, the evaluation of them, etc. on my \href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines}{GitHub Project}).}. We used pre-trained word embeddings for our expansion because our self-trained embeddings would have expanded the dictionaries with words (such as \textit{deutsch} or \textit{europa}), which would have identified almost every headline as negative, i.e., the sensitivity would have been about 98\% (with very poor accuracy and specificity\footnote{we would have had a very high False Positive rate}.
-See appendix \ref{appendix:2.1} for the word lists we used for our dictionary expansion.
+>__Note__: We used the **pre-trained word embeddings** (see all details of the word embeddings [here](#word-embeddings))for the expansion because our **self-trained embeddings** would have expanded the dictionaries with words *deutsch* or *europa*, which would have identified almost every headline as ``negative``, i.e., the **sensitivity** would have been about 98% (with very poor accuracy and specificity (we would have had a very high False Positive rate}).
+
+ </details>
+ <summary>See here the word list we used for our dictionary expansion </summary>.
   
+  
+ </details>
   
 #### Final dictionaries
 
