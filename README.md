@@ -52,8 +52,8 @@ The dataset includes following variables:
 
 ![HeadlineDataset.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/HeadlineDataset.JPG)
 
-
-
+Following 3 sample observations can be seen:
+![ExampleHeadlines.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/ExampleHeadlines.JPG)
 
 
 
