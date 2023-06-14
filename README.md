@@ -64,3 +64,7 @@ As output all results of the tests are shown and the null hypothesis is for this
 ![OutputCocot](https://user-images.githubusercontent.com/48829194/62342257-86e2d080-b4e6-11e9-8685-94fb930be027.PNG)
 
 All the calculated results can be seen on the [excel files](https://github.com/Nadine-Schmitt/bachelorThesis-nadischm/tree/master/Results/ResultsCocor).
+
+
+## Topic Modelling - STM
+
