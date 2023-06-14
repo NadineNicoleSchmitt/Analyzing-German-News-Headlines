@@ -36,20 +36,16 @@ We labeled the data according to the **sentiment** rather than the content of th
 > __Note__: Otherwise, it would be very hard to classify headlines because human (political) opinion would be included (e.g. a headline about Covid-19 lockdowns could be classified differently according to the opinion of the coder). 
 
 <details>
-<summary>See a list of **coding guidelines**</summary>
+<summary>See a list of coding guidelines</summary>
 
 ![RulesHumanCoding.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/RulesHumanCoding.JPG)
 </details>
-
 
 <details>
 <summary>Some sample codings</summary>
 ![ExampleHumanCoding.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/ExampleHumanCoding.JPG)
 </details>
  
-
-![ExampleHumanCoding.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/ExampleHumanCoding.JPG)
-
 In total, 6546 (~59%) headlines were classified as ``Negative``; 4563 (~41%) were classified as ``NotNegative``.
 
 #### Final Dataset
