@@ -48,9 +48,10 @@ Additionally, for the **text-scaling analysis** of the political ideology of the
 
 ### Descriptive Statistics
 
+***
 ## Dictionary Analysis
 
-
+***
 ## Classification with Naive Bayes
 
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/FeatureSelection.JPG" width="600">
@@ -62,7 +63,11 @@ see full [Classification_NaiveBayesResults.pdf](https://github.com/NadineNicoleS
 
 
 
-## Compare two Pearson correlations
+
+***
+## Word Embeddings
+
+### Compare two Pearson correlations
 In order to compare two Pearson correlations the [cocor package in R](https://cran.r-project.org/web/packages/cocor/cocor.pdf) is used. It can be downloaded from the [project's homepage](https://CRAN.R-project.org/package=cocor). 
 The follwoing command is typed into the R console to install the cocor package in R:
 ```markdown
@@ -97,6 +102,10 @@ As output all results of the tests are shown and the null hypothesis is for this
 
 All the calculated results can be seen on the [excel files](https://github.com/Nadine-Schmitt/bachelorThesis-nadischm/tree/master/Results/ResultsCocor).
 
-
+***
 ## Topic Modelling - STM
+
+***
+## Text Scaling - Wordfish
+
 
