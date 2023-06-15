@@ -347,9 +347,7 @@ We calculated each **outlet** and **category's mean average dictionary score** p
 
 Following figure shows the **mean dictionary score** over time (year) grouped by category:
 
-![PlotGroupedCategory.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/PlotGroupedCategory.JPG)
-
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/PlotGroupedCategory.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/PlotGroupedCategory.JPG" width="750">
 	
 Category **Rassismus** has the highest scores over the whole period, while category **Digitalisierung** constantly has low average scores. Besides, we see that there is the biggest variation in the scores for the category **Coronavirus**. Although the crisis started in 2020, we can see relatively high scores in the years between 2013-2016 (This might be due to the fact that only some articles were written during this period, and when it was mentioned in the news, it was nothing ``positive``). We can see no clear trend that the negative headlines have become more negative in the last decade. There was a decrease in the score in all categories during the first year of the Covid-19 crisis (including the **Coronavirus** category). Then again, there has been a slight increase in all categories except **Ukraine** since 2021 to the level of the previous years. This is very interesting as we would have expected that the score would have risen due to the start of the Ukraine war in 2022 (note that there was a slight increase from 2021 to 2022). 
 
