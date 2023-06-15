@@ -616,14 +616,15 @@ effect_year <-plot.estimateEffect(stm_effects, covariate = "year", method = "poi
 
 ##### Do different outlets report about mandatory vaccination in different rates?
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectOutlet.JPG" width="600">
-We can see that mandatory vaccination was most discussed by the outlets **Welt** and *FAZ*, while *SZ* and *Wirtschaftswoche* focused less on it.
+We can see that mandatory vaccination was most discussed by the outlets **Welt** and **FAZ**, while **SZ** and **Wirtschaftswoche** focused less on it.
 	
-#####Is the topic mandatory vaccination more common among headlines with ``negative`` sentiment?
+##### Is the topic mandatory vaccination more common among headlines with ``negative`` sentiment?
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectSentiment.JPG" width="600"> 
 As expected, mandatory vaccination is more prevalent among headlines with ``negative`` sentiment.
-#####In which year was the topic mandatory vaccination most/ less prevalent?
+	
+##### In which year was the topic mandatory vaccination most/ less prevalent?
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
-We can clearly see that mandatory vaccination has become most prevalent in the last years during the crisis.
+We can clearly see that mandatory vaccination has become more prevalent in the last years during the crisis.
 	
 ### Limitations STM
 - We applied STM only on category **Coronavirus** and it would be interesting to see this analysis also for the other categories/ we only inspected one topic (manadatory vaccination); hence we should further investigate other topics
