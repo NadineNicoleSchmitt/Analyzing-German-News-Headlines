@@ -546,6 +546,12 @@ We can see that topics 21 (=News about new Covid cases) and 1 (=Mandatory Vaccin
 In the following we now inspect topic 1 more in detail:
 	
 #### Face Validating of top headlines asscociated with topic 1
+
+In order to find out if our model performs well and captures the right topics, we looked at the top headlines associated with topic 1 by usong the **findThoughts function**.
+We can see that almost all headlines are about (mandatory) vaccination (false ones are highlighted):
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/findThoughts.JPG" width="600"> 
+
+
 #### Estimate difference in topic usage by covariates
 A) Do different outlets report about mandatory vaccination in different rates?
 B) Is the topic mandatory vaccination more common among headlines with ``negative`` sentiment?
