@@ -433,7 +433,12 @@ All the calculated results can be seen on the [excel files](https://github.com/N
 ***
 	
 ## Topic Model - STM
-Expanding our analysis, we also wanted to get more insights into the topics of each category 
+Expanding our analysis, we also wanted to get more insights into the topics of each category and how the **topic prevalence** vary by covariates (e.g. allowing us to expect how ``negative`` headlines are more likely to be about one specific subtopic than ``NonNegative`` headlines). We therefore used **Structural Topic Modelling (STM)** to be able to incoporate covariates. We focused here on the category **Coronavirus** and included ``year``, ``sentiment`` (outputs from [classification with Naive Bayes](#classification-with-naive-bayes)) and ``outlet`` as **metadata**.
+
+### Preprocessing headlines
+As we focused only on category **Coronavirus** we filtered our headlines by category **Coronavirus** and used this as input for our corpus.
+->__Note__: as we included sentiment as covariate, we have to load the dataset which include the classification [headlines_withNaiveBayesScore.Rdata](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/headlines_withNaiveBayesScore.Rdata)
+
 
 ### Search for best K
 
