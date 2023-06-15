@@ -604,10 +604,27 @@ We can see that almost all headlines are about (mandatory) vaccination (false on
 
 
 #### Estimate difference in topic usage by covariates
-A) Do different outlets report about mandatory vaccination in different rates?
-B) Is the topic mandatory vaccination more common among headlines with ``negative`` sentiment?
-C) In which year was the topic mandatory vaccination most/ less prevalent?
+To estimate the difference in topic usage by covariates, following R code can be run:
 
+```markdown
+stm_effects <- estimateEffect(c(1)~outlet+ year + classificationNaiveBayes, model, metadata = out$meta)
+effect_outlet <-plot.estimateEffect(stm_effects, covariate = "outlet", method = "pointestimate")
+effect_sentiment <-plot.estimateEffect(stm_effects, covariate = "classificationNaiveBayes", method = "pointestimate")
+effect_year <-plot.estimateEffect(stm_effects, covariate = "year", method = "pointestimate")
+#effect_sentiment_diff <-plot.estimateEffect(stm_effects, covariate = "classificationNaiveBayes", method = "difference", cov.value1 = 1, cov.value2 = 0)
+```
+
+##### Do different outlets report about mandatory vaccination in different rates?
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectOutlet.JPG" width="600">
+We can see that mandatory vaccination was most discussed by the outlets **Welt** and *FAZ*, while *SZ* and *Wirtschaftswoche* focused less on it.
+	
+#####Is the topic mandatory vaccination more common among headlines with ``negative`` sentiment?
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectSentiment.JPG" width="600"> 
+As expected, mandatory vaccination is more prevalent among headlines with ``negative`` sentiment.
+#####In which year was the topic mandatory vaccination most/ less prevalent?
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+We can clearly see that mandatory vaccination has become most prevalent in the last years during the crisis.
+	
 ### Limitations STM
 - We applied STM only on category **Coronavirus** and it would be interesting to see this analysis also for the other categories/ we only inspected one topic (manadatory vaccination); hence we should further investigate other topics
 - We included ``year``, ``sentiment`` and ``outlet`` as **metadata**, but also other covariates such as gender of the author/ etc. could be incoporated
