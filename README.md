@@ -325,39 +325,30 @@ Following the **performance statistics** of our dictionary scores compared to th
 
 We see that the Rauh dictionary performs better than the LSD (which has very low sensitivity, i.e., only about 25\% of the negative headlines are classified as negative; however, with 92\% Specificity, a high rate of ``NotNegative`` headlines are identified), but only about 55\% of the true ``negative`` headlines are classified as ``negative``. This is due to the fact that our dictionaries miss many ``negative`` words (e.g., negative words in our context of the news; the dictionaries we used do not capture *new* negative words as they are quite old). We even get only a slightly better Sensitivity by using word embeddings, which is due to the fact that they are pre-trained and not applied to our specific context. Overall, we get an accuracy of about 66,6 percent for the expanded Rauh dictionary, which is better than our naive guess of roughly 59 percent.
   
-### Face Validating
+### Face Validating Dictionary
   
 <details>
-<summary>Top 30 headlines with the highest dictionary scores indicating negative sentiment  </summary>.
+<summary>Top 30 headlines with the highest dictionary scores indicating negative sentiment (false negatives highlighted) </summary>.
  
 ![FaceValidatingNegative.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/FaceValidatingNegative.JPG)
 </details>
   
 <details>
-<summary>Top 30 headlines with the lowest dictionary scores indicating negative sentiment  </summary>.
+<summary>Top 30 headlines with the lowest dictionary scores indicating negative sentiment (false positives highlighted)  </summary>.
  
 ![FaceValidatingNotNegative.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/FaceValidatingNotNegative.JPG)
 </details>
   
-  
-  
-  
-In figure \ref{img:FaceNeg} and \ref{img:FaceNotNeg}, the top 30 headlines with the highest/ lowest dictionary scores indicating negative sentiment are shown, and we highlighted false negatives/positives. We can see that only some are classified wrongly. It is interesting to see that all negative headlines are much shorter than the NonNegative headlines\footnote{This is because we use the proportions of negative words in a headline that appear in our dictionary. Hence, a headline with 4 words in total and 2 negative words gets a score of 2/4=0.5, while a headline with 2 words in total and 2 negative words gets a score of 2/2 =1. It is questionable if a headline that also includes some neutral/ positive words but the same amount of negative words is less negative. Further research should be done on this.}.
-  
-  
-  
-  
-  
-  
+We can see that only some are classified wrongly. It is interesting to see that all ``negative`` headlines are much shorter than the ``NonNegative`` headlines. This is because we use the proportions of ``negative`` words in a headline that appear in our dictionary. Hence, a headline with 4 words in total and 2 ``negative`` words gets a score of 2/4=0.5, while a headline with 2 words in total and 2 ``negative`` words gets a score of 2/2 =1. It is questionable if a headline that also includes some ``neutral/ positive`` words but the same amount of ``negative`` words is less ``negative``. Further research should be done on this.}.
+ 
 ### Results Dictionary
   
 ### Limitations Dictionary
 - We just used two existing dictionaries (available directly in quanteda). In a future analysis **other dictionaries**, such as the [NRC Word-Emotion Association Lexicon](https://rdrr.io/github/quanteda/quanteda.sentiment/man/data\_dictionary\_NRC.html) should be applied to see if we can reach better performance statistics. 
-- Additionally, this dictionary could expand the analysis to negative sentiment and provide further insights into **sentiments such as fear or anger** (e.g., do the headlines during the Covid-19 pandemic include more words with the fear sentiment?).
+- Additionally, this dictionary could expand the analysis to ``negative`` sentiment and provide further insights into **sentiments** such as ``fear`` or ``anger`` (e.g., do the headlines during the Covid-19 pandemic include more words with the ``fear`` sentiment?).
 -  Furthermore, we only used one dfm and made no feature selection, i.e., it would be interesting to see if we get better/different results when we use **other features**, such as removing stopwords. 
 -  Besides, we did not apply **weighted vector representations** (only raw word counts instead of tf-idf weighting) and also used no **weighted scores** in the dictionaries. It would be interesting to see if we get different results when using **tf-idf weighting** and using weighted dictionaries/using the cosine similarity scores from our dictionary expansion with word embeddings. 
--  Moreover, as seen 
-above, we should further investigate if headlines containing the same amount of negative words but are longer (i.e., also containing some neutral/ positive words) should be considered less negative. 
+-  Moreover, as seen in [Face Validating Dictionary](#face-validating-dictionary), we should further investigate if headlines containing the same amount of ``negative`` words but are longer (i.e., also containing some ``neutral/ positive`` words) should be considered less ``negative``. 
 - Finally, as we only get slightly better results when expanding our dictionary with word embeddings, we should use in further research **self-trained word embeddings** on our specific context (but rather than only use the headlines we should train them on large corpora, i.e., the full news articles).
 
 ***
