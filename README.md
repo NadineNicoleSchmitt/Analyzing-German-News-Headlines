@@ -458,7 +458,7 @@ out <-prepDocuments(processed$documents,
                     lower.thresh = 1) #set threshold to 1
 ```
 
->__Note__: the function **prepDocuments** removes infrequent terms depending on the user-set parameter *lower.thresh*. In order to evaluate how many words and documents would be removed from the dataset at each word threshold (=minimum number of documents a word needs to appear in order for the word to be kept), we plotted the number of words and documents removed for different thresholds and set the value to 1: <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/RemovedByThreshold.JPG" width="450"> 
+>__Note__: the function **prepDocuments** removes infrequent terms depending on the user-set parameter *lower.thresh*. To evaluate how many words/ documents would be removed from the dataset at each word threshold (=minimum number of documents a word needs to appear in order for the word to be kept), we plotted the number of words/ documents removed for different thresholds and set the value to 1: <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/RemovedByThreshold.JPG" width="450"> 
 	
 ### Search for best K
 
