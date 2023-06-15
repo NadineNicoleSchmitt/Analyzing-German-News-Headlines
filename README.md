@@ -315,7 +315,7 @@ dfm_lsd <- corpus %>%
 ```
 </details>
 
-Afterward, we applied the dfm to our dictionaries and computed the dictionary score\footnote{the proportion of negative words of a headline}. In order to evaluate our approach, we compared the scores to our human codings (every headline which contains at least one negative word was classified as negative), calculated performance statistics, and used the \textit{best dictionary} to explore the sentiment of the headlines  (we did some face validating check before). 
+Afterward, we applied the dfm to our dictionaries and computed the **dictionary score** (the proportion of ``negative`` words of a headline). In order to evaluate our approach, we compared the scores to our **human codings** (every headline which contains at least one ``negative`` word was classified as ``negative``)., calculated performance statistics, and used the \textit{best dictionary} to explore the sentiment of the headlines  (we did some face validating check before). 
 
 ### Performance Dictionary
 ### Face Validating
