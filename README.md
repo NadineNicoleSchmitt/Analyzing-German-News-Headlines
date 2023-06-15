@@ -492,6 +492,7 @@ search_k <- searchK(documents  = out$documents,
 ![PSearchK.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/SearchK.JPG)
 </details>
 
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/PotentialBestCandidatesK.JPG" width="600"> 
 ![PotentialBestCandidatesK.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/PotentialBestCandidatesK.JPG)
 	
 	
