@@ -538,7 +538,7 @@ plot(model25)
 ```
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/ExpectedTopicProportions.JPG" width="600"> 
 
-We can see that topics 21 (= and 1  are the most common topics, while topics 15 and 25 are the least common of all headlines. 
+We can see that topics 21 (=News about new Covid cases) and 1 (=Mandatory Vaccination) are the most common topics, while topics 15 (=Masks) and 25(=Germany, Europe) are the least common of all headlines. 
 
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/TopTopics.JPG" width="600"> 
 	
