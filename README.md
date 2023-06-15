@@ -473,7 +473,7 @@ Afterward, we used the **searchK function** to find the best K based on quantita
 <details>
 <summary>R code SearchK </summary>.
 
-	````markdown
+```markdown
 search_k <- searchK(documents  = out$documents,
                    vocab      = out$vocab,
                    K          = seq(5,60, by=5),
@@ -484,7 +484,6 @@ search_k <- searchK(documents  = out$documents,
                    init.type = "Spectral",
                    verbose=TRUE)
 ```
-
 </details>
 
 <details>
