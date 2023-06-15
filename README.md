@@ -437,8 +437,28 @@ Expanding our analysis, we also wanted to get more insights into the topics of e
 
 ### Preprocessing headlines
 As we focused only on category **Coronavirus** we filtered our headlines by category **Coronavirus** and used this as input for our corpus.
-->__Note__: as we included sentiment as covariate, we have to load the dataset which include the classification [headlines_withNaiveBayesScore.Rdata](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/headlines_withNaiveBayesScore.Rdata)
+>__Note__: as we included sentiment as covariate, we have to load the dataset which include the classification [headlines_withNaiveBayesScore.Rdata](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/headlines_withNaiveBayesScore.Rdata)
 
+For preprocessing the data, one option would be to create a dfm and then convert dfm to an object that can be used with stm:
+```markdown
+covid_stm <- convert(covid_dfm, to ="stm")
+```
+We alternatively used the approach decribed in this [paper](https://cran.r-project.org/web/packages/stm/vignettes/stmVignette.pdf) for preprocessing by using the tm package in R:
+	     
+```markdown
+#ingest and prepare documents
+processed <- textProcessor(covid$title, metadata = covid)
+
+#threshold to remove rarely used words
+plotRemoved(processed$documents, lower.thresh = seq(1,25, by=1))
+
+out <-prepDocuments(processed$documents,
+                    processed$vocab,
+                    processed$meta,
+                    lower.thresh = 1) #set threshold to 1
+```
+
+>__Note__: the function **prepDocuments** removes infrequent terms depending on the user-set parameter *lower.thresh*. In order to evaluate how many words and documents would be removed from the dataset at each word threshold (=minimum number of documents a word needs to appear in order for the word to be kept), we plotted the number of words and documents removed for different thresholds and set it to 1: ![RemovedByThreshold.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/RemovedByThreshold.JPG)
 
 ### Search for best K
 
