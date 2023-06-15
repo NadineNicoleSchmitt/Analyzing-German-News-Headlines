@@ -343,6 +343,31 @@ We can see that only some are classified wrongly. It is interesting to see that 
  
 ### Results Dictionary
   
+We calculated each **outlet** and **category's mean average dictionary score** per month. The entire table of results can be found [here]t(https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/DictionaryResults.pdf).
+
+Following figure shows the **mean dictionary score** over time (year) grouped by category. Category *Rassismus* has the highest scores over the whole period, while category Digitalisierung constantly has low average scores. Besides, we see that there is the biggest variation in the scores for the category Coronavirus. Although the crisis started in 2020, we can see relatively high scores in the years between 2013-2016\footnote{This might be due to the fact that only some articles were written during this period, and when it was mentioned in the news, it was nothing positive}. We can see no clear trend that the negative headlines have become more negative in the last decade. There was a decrease in the score in all categories during the first year of the Covid-19 crisis (including the coronavirus category). Then again, there has been a slight increase in all categories except Ukraine since 2021 to the level of the previous years. This is very interesting as we would have expected that the score would have risen due to the start of the Ukraine war in 2022 (note that there was a slight increase from 2021 to 2022). When grouping by outlets, we can see that bild.de and Spiegel have lower scores than FAZ and SZ, but this might be due to the fact that the latter have shorter headlines (see section \ref{sec:des}) and, therefore, higher scores, as described in section \ref{sec:val}. This is also in line with our results of the classification with Naive Bayes, in which the boulevard bild.de has the most negative scores of all outlets. 
+\begin{figure}[H]
+	\centering
+	\makebox[\textwidth]{\includegraphics[width=\textwidth]{PlotGroupedCategory.JPG}}
+	\caption{Mean Dictionary Score over time grouped by category}
+	\label{img:plot1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\makebox[\textwidth]{\includegraphics[width=\textwidth]{PlotGroupedOutlet.JPG}}
+	\caption{Mean Dictionary Score over time grouped by outlet}
+	\label{img:plot2}
+\end{figure}
+Note that only a little analysis is represented in this paper, and we present further insights (e.g., plots for each category/outlet) on my \href{https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines}{GitHub Project}). 
+
+\section{Conclusion}
+Altogether and also incorporating the results of the Naive Bayes classification, we can see no clear trend that the sentiment of the news headlines has become more negative in the last decade. It seems that it is completely the other way around - especially in periods of an acute crisis (i.e., there are more headlines with negative content), it seems that the fraction of negative headlines in terms of the sentiment (i.e., how the negative content is expressed) is lower than in \textit{good} times. Hence we make the following hypothesis: when there are no/less \textit{bad} news in terms of the content, they have to be formulated with a more negative sentiment touch in order to reach more attention by the readers. This hypothesis should be checked in further research. Other ideas and limitations are represented in the next section. 
+
+  
+  
+
+  
 ### Limitations Dictionary
 - We just used two existing dictionaries (available directly in quanteda). In a future analysis **other dictionaries**, such as the [NRC Word-Emotion Association Lexicon](https://rdrr.io/github/quanteda/quanteda.sentiment/man/data\_dictionary\_NRC.html) should be applied to see if we can reach better performance statistics. 
 - Additionally, this dictionary could expand the analysis to ``negative`` sentiment and provide further insights into **sentiments** such as ``fear`` or ``anger`` (e.g., do the headlines during the Covid-19 pandemic include more words with the ``fear`` sentiment?).
