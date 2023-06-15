@@ -531,7 +531,7 @@ In the following, some sample topics (for which we think were most controversial
 	
 See this [file](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/TopicsCovid.pdf) for the interpretation of all 25 topics.
 
-###Estimated Topic Proportions
+### Estimated Topic Proportions
 We used the **plot function** to assess *how common each topic* is in the whole corpus:
 ```markdown
 plot(model25)
