@@ -431,7 +431,20 @@ All the calculated results can be seen on the [excel files](https://github.com/N
 - we did not perform **hyper-parameter tuning** when training the GloVe word embeddings to identify the best parameters for training and therefore in a further research this should be done
 - we only used GLoVe
 ***
+	
 ## Topic Modelling - STM
+Expanding our analysis, we also wanted to get more insights into the topics of each category 
+
+### Search for best K
+
+### Face validating	
+	
+	
+### Limitations STM
+- We applied STM only on category **Coronavirus** and it would be interesting to see this analysis also for the other categories
+- We included ``year``, ``sentiment`` and ``outlet`` as **metadata**, but also other covariates such as gender of the author/ etc. could be incoporated
+- We focused our analysis on the difference in **topic prevalence** and not in **topic content**, but this would be also interesting to analyse in a further research (e.g. how do outlets use words differently within a given topic?/ do ``negative`` classified headlines use words differently in a given topic (such as lockdown) than ``NonNegative`` classified headlines?)
+-We tried to maximize **Semantic Coherence** (=Do the most common words from a topic also co-occur together frequently in the same documents/ headlines?) and **Exclusivity** (=Do words with high probability in one topic have low probabilities in others?) (see [Search for best k](#search-for-best-k)); but rather than using **quantitative metrics** (prediction) to evaluate our model, we should also focus more on **qualitative metrics** as there tends to be a negative correlation between quantitative diagnostics and human judgements. We could for example expand our *face validating* (show sample headlines associated with a topic), investigate if variation in topic usage correspong to an known event (e.g. start of lockdown), or apply semantic validity as decribed by [Chang et al., 2009](https://proceedings.neurips.cc/paper/2009/file/f92586a25bb3145facd64ab20fd554ff-Paper.pdf)
 
 ***
 ## Text Scaling - Wordfish
