@@ -495,13 +495,27 @@ search_k <- searchK(documents  = out$documents,
 </details>
 
 <details>
-<summary>R Exclusivity vs. Semantic Coherence </summary>.
+<summary>R Semantic Coherence vs. Exclusivity </summary>.
 
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/PotentialBestCandidatesK.JPG" width="600"> 
 </details>
 
+Based on these metrics and some *face validating* of the topics for different values of K, we trained the STM model for **K = 25**
+<details>
+<summary>R Model25  </summary>.
 
-	
+```markdown
+model25<- stm(documents = out$documents,
+                      vocab      = out$vocab,
+                      K          = 25,
+                      seed       = 1234,
+                      prevalence =  ~ outlet + year + classificationNaiveBayes, 
+                      data       = out$meta,
+                      init.type = "Spectral",
+                      #max.em.its = 150,
+                      verbose =TRUE)	
+```
+</details>	
 	
 >__Note__: as the training of the model is time consuming we set up a **Google Cloud Virtual Machine** and trained the models there; the models are to big to be uploaded on this repository; hence you have to run the code if you would like to use them
 
@@ -512,7 +526,7 @@ search_k <- searchK(documents  = out$documents,
 - We applied STM only on category **Coronavirus** and it would be interesting to see this analysis also for the other categories
 - We included ``year``, ``sentiment`` and ``outlet`` as **metadata**, but also other covariates such as gender of the author/ etc. could be incoporated
 - We focused our analysis on the difference in **topic prevalence** and not in **topic content**, but this would be also interesting to analyse in a further research (e.g. how do outlets use words differently within a given topic?/ do ``negative`` classified headlines use words differently in a given topic (such as lockdown) than ``NonNegative`` classified headlines?)
--We tried to maximize **Semantic Coherence** (=Do the most common words from a topic also co-occur together frequently in the same documents/ headlines?) and **Exclusivity** (=Do words with high probability in one topic have low probabilities in others?) (see [Search for best k](#search-for-best-k)); but rather than using **quantitative metrics** (prediction) to evaluate our model, we should also focus more on **qualitative metrics** as there tends to be a negative correlation between quantitative diagnostics and human judgements. We could for example expand our [Face Validating](#face-validating-stm) (show sample headlines associated with a topic), investigate if variation in topic usage correspong to an known event (e.g. start of lockdown), or apply semantic validity as decribed by [Chang et al., 2009](https://proceedings.neurips.cc/paper/2009/file/f92586a25bb3145facd64ab20fd554ff-Paper.pdf)
+-We tried to maximize **Semantic Coherence** (=Do the most common words from a topic also co-occur together frequently in the same documents/ headlines?) and **Exclusivity** (=Do words with high probability in one topic have low probabilities in others?) (see [Search for best k](#search-for-best-k)); but rather than using **quantitative metrics** (prediction) to evaluate our model, we should also focus more on **qualitative metrics** as there tends to be a negative correlation between quantitative diagnostics and human judgements. We could for example expand our *Face Validating* (show sample headlines associated with a topic), investigate if variation in topic usage correspong to an known event (e.g. start of lockdown), or apply semantic validity as decribed by [Chang et al., 2009](https://proceedings.neurips.cc/paper/2009/file/f92586a25bb3145facd64ab20fd554ff-Paper.pdf)
 
 ***
 ## Text Scaling - Wordfish
