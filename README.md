@@ -319,8 +319,9 @@ Afterward, we applied the dfm to our dictionaries and computed the **dictionary 
 
 ### Performance Dictionary
 
-Following the **performance statistics** of our dictionary scores compared to the human coding is shown: 
+Following the **performance statistics** of our dictionary scores compared to the **human coding** is shown: 
 
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/Dictionary_Comparion_Human_Judgement.JPG" width="600">
 ![Dictionary_Comparion_Human_Judgement.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/Dictionary_Comparion_Human_Judgement.JPG)
 
 We see that the Rauh dictionary performs better than the LSD (which has very low sensitivity, i.e., only about 25\% of the negative headlines are classified as negative; however, with 92\% Specificity, a high rate of ``NotNegative`` headlines are identified), but only about 55\% of the true ``negative`` headlines are classified as ``negative``. This is due to the fact that our dictionaries miss many ``negative`` words (e.g., negative words in our context of the news; the dictionaries we used do not capture *new* negative words as they are quite old). We even get only a slightly better Sensitivity by using word embeddings, which is due to the fact that they are pre-trained and not applied to our specific context. Overall, we get an accuracy of about 66,6 percent for the expanded Rauh dictionary, which is better than our naive guess of roughly 59 percent.
