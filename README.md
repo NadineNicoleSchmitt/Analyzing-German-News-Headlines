@@ -520,11 +520,27 @@ model25<- stm(documents = out$documents,
 >__Note__: as the training of the model is time consuming we set up a **Google Cloud Virtual Machine** and trained the models there; the models are to big to be uploaded on this repository; hence you have to run the code if you would like to use them
 
 ### Most distinctive words for each topic
-We used the **labelTopics function** to extract the most distinctive words for each topic and tried to interpret these topic labels. 
-In the following some sample topics (for which we think were most contoversal in Germany) are given:
+We used the **labelTopics function** to extract the most distinctive words for each topic and tried to interpret these topic labels.
+
+```markdown
+labelTopics(model25)
+```
+In the following, some sample topics (for which we think were most controversial in Germany) are given:
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/SampleTopics.JPG" width="600"> 
 	
-	
-	
+See this [file](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/TopicsCovid.pdf) for the interpretation of all 25 topics.
+
+###Estimated Topic Proportions
+We used the **plot function** to assess *how common each topic* is in the whole corpus:
+```markdown
+plot(model25)
+```
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/ExpectedTopicProportions.JPG" width="600"> 
+
+We can see that topics 21 (= and 1  are the most common topics, while topics 15 and 25 are the least common of all headlines. 
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/TopTopics.JPG" width="600"> 
 	
 ### Face validating STM	
 	
