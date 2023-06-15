@@ -460,7 +460,20 @@ out <-prepDocuments(processed$documents,
 
 >__Note__: the function **prepDocuments** removes infrequent terms depending on the parameter *lower.thresh*. To evaluate how many words/ documents would be removed from the dataset at each word threshold (=minimum number of documents a word needs to appear in order for the word to be kept), we plotted the number of words/ documents removed for different thresholds and set it to 1: <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/RemovedByThreshold.JPG" width="450"> 
 	
-### Search for best K
+### Search for best K 
+To select the best parameter for K, we firstly used a preliminary selection strategy based on work by [Lee and Mimno (2014)](https://dl.acm.org/doi/pdf/10.5555/2145432.2145462)
+<details>
+<summary>Topics model Lee and Mimno </summary>.
+
+![Model_Lee_Mimo.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/Model_Lee_Mimo.JPG)
+</details>
+	
+	
+	
+	
+	
+	
+>__Note__: as the training of the model is time consuming we set up a **Google Cloud Virtual Machine** and trained the models there; the models are to big to be uploaded on this repository; hence you have to run the code if you would like to use them
 
 ### Face validating STM	
 	
