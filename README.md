@@ -500,9 +500,9 @@ search_k <- searchK(documents  = out$documents,
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/PotentialBestCandidatesK.JPG" width="600"> 
 </details>
 
-Based on these metrics and some *face validating* of the topics for different values of K, we trained the STM model for **K = 25**
+Based on these metrics and some *face validating* of the topics for different values of K, we trained the STM model for **K = 25**:
 <details>
-<summary>R Model25  </summary>.
+<summary> Model for K=25  </summary>.
 
 ```markdown
 model25<- stm(documents = out$documents,
@@ -519,6 +519,13 @@ model25<- stm(documents = out$documents,
 	
 >__Note__: as the training of the model is time consuming we set up a **Google Cloud Virtual Machine** and trained the models there; the models are to big to be uploaded on this repository; hence you have to run the code if you would like to use them
 
+### Most distinctive words for each topic
+We used the **labelTopics function** to extract the most distinctive words for each topic and tried to interpret these topic labels. 
+In the following some sample topics (for which we think were most contoversal in Germany) are given:
+	
+	
+	
+	
 ### Face validating STM	
 	
 	
@@ -530,13 +537,17 @@ model25<- stm(documents = out$documents,
 
 ***
 ## Text Scaling - Wordfish
-
+***
+## Conclusion
+***
 ## Further Limitations
 - We collected news headlines from eight different **categories** and 8 different news **outlets**, and it would be interesting to see if we get different results when including other categories (such as sports or finance) and more/ other outlets. 
-- We did not include **metadata** such as the gender of the author, and it would be interesting to see if this impacts the headline's sentiment. 
+- We did not include **metadata** such as the gender of the author, and it would be interesting to see if this impacts the headline's sentiment.
+- We analyses German news headlines and it would be interesting to see if we get the same results when we apply this to **other countries** in the world
 - Besides, as described in our [introduction](#introduction), user-tracking technology to measure content reach grew throughout the 2010s. We, therefore, could expand the analysis to a **broader time frame** (e.g., starting in 2003) and see if we get different results in this earlier period 
 >__Note__: collecting data for this time frame could be very hard.
 -  Going deeper into this, we could also perform a **causal inference using our headlines as a treatment**: We could analyze the causal relationship between headlines with ``negative`` sentiment (treatment) and the clicks of a headline 
 > __Note__: when using text as treatment randomization alone is not sufficient to identify the causal effect of a latent treatment, because there are other features in the headlines (such as content) which can have an impact on the click rate. Therefore one would have to control for observable cofounders).
+
 
 
