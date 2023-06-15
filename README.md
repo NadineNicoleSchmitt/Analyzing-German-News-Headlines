@@ -373,7 +373,58 @@ Altogether and also incorporating the results of the Naive Bayes classification,
 ***
 ## Classification with Naive Bayes
 
+### Feature Selection with k fold cross validation
+
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/FeatureSelection.JPG" width="600">
+
+	
+<details>
+<summary>R code k fold cross validationy  </summary>.
+ 
+```markdown
+get_performance_scores <- function(held_out){
+  
+  # Set up train and test sets for this fold
+  dfm_train <- dfm_subset(dfm6, !held_out)
+  dfm_test <- dfm_subset(dfm6, held_out)
+  
+  # Train model on everything except held-out fold
+  nb_train <- textmodel_nb(x = dfm_train, 
+                           y = dfm_train$human_coding,
+                           prior = "docfreq")
+  
+  # Predict for held-out fold
+  dfm_test$predicted_classification <- predict(nb_train, 
+                                               newdata = dfm_test, 
+                                               type = "class")
+  
+  # Calculate accuracy, specificity, sensitivity
+  confusion_nb <- table(predicted_classification = dfm_test$predicted_classification,
+                        true_classification = dfm_test$human_coding)
+  #print(confusion_nb)
+  
+  confusion_nb_statistics <- confusionMatrix(confusion_nb, positive = "Negative")
+  
+  accuracy <- confusion_nb_statistics$overall[1]
+  sensitivity <- confusion_nb_statistics$byClass[1]
+  specificity <- confusion_nb_statistics$byClass[2]
+  
+  return(data.frame(accuracy, sensitivity, specificity))
+  
+}
+
+#create a vector representing the K folds
+K <- 10
+folds <- sample(c(1:K), nrow(headlinesLabeled), replace =T)
+
+
+#apply performance score function to all folds
+model <- lapply(1:K, function(k) get_performance_scores(folds==k))
+x <- colMeans(bind_rows(model))
+```
+</details>
+
+	
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/PerformanceScoresNaiveBayes.JPG" width="600">
 
 see full [Classification_NaiveBayesResults.pdf](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/ClassificationNaiveBayesResults.pdf)
