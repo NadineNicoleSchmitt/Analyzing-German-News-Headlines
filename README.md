@@ -432,7 +432,7 @@ All the calculated results can be seen on the [excel files](https://github.com/N
 - we only used GLoVe
 ***
 	
-## Topic Modeling - STM
+## Topic Model - STM
 Expanding our analysis, we also wanted to get more insights into the topics of each category 
 
 ### Search for best K
