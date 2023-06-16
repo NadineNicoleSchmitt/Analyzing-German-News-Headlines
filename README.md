@@ -698,8 +698,6 @@ In order to interpret the resulting ideological space and work out what it *mean
 
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/wordsHomo.JPG" width="600">
 
-It seems that the model is essential discovering that the main source of variation in word usage is related to topic content of the outlets' articles (rather than the ideological position of the outlets). While 
-
 
 ### Bürgergeld
 We applied the same approach as in [previous section](#homoEhe) and get the follwoing positions:
@@ -742,8 +740,9 @@ We expanded our analysis by not using the full articles and instead try to measu
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/PositionKlima.JPG" width="600">
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/wordsKlima.JPG" width="600">
 </details>	
-	
 
+### Interpreting the results
+It seems that the models are essentially discovering that the main source of variation in word usage is related to topic content of the outlets' articles (rather than the ideological position of the outlets). While (with some aberrance) some outlets (such as **bild.de**, **Spiegel**, **SZ**) focuses more on the political debate, dispute and public people/politicians involved, outlets (such as **FAZ**, **Welt**, **ZeitOnline**) tend to disucss or describe more the process/ issues/ consequences of the topic itself. For example in the category **Klimawandel**, the former focused more on the political dispute like *Klima_zoff** or *tv-schlacht*, while the latter used words about the issue and its consequences such as *Stromkosten*, *Milliardengeschäft* and *Stagflation*. It is fascinating that this is completelly in line with our results from [Classification with Naive Bayes](#classification-with-naive-bayes), where we saw that the first group of outlets use more ``negative`` headlines and therefore use more words about the political dispute in their headlines.
 	
 ### Limitations
 - As we did not measure political ideology (variation in word use does not appear to be primarily driven by differences in ideology), we could try in further research to use supervised scaling methods (e.g., Wordscores), in which we add outlets from which we exactly know their political position (e.g. [SoZOnline](https://www.sozonline.de/), who describes itself as socialist outlet) and use them as reference texts
