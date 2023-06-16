@@ -634,6 +634,11 @@ We can clearly see that mandatory vaccination has become more prevalent in the l
 
 ***
 ## Text Scaling - Wordfish
+We collected data from 8 different German news **outlets** and analysed differences among them; hence it is interesting to know the **politcal ideology** of them. Looking on graphs such as [here](https://www.wahl.de/aktuell/kurz-notiert/medienlandschaft-uebersicht-deutschland/), we could get a first idea. It seems that **bild.de**, **Welt**, **FAZ** are more right-wring, ""Wirtschaftswoche** and "Handelsblatt** are central and **SZ**, **Spiegel** and **Zeit** are more left-wring.
+	
+study 1 of this [paper](https://journals.sagepub.com/doi/abs/10.1177/1940161220935058?journalCode=hijb)	
+	
+	
 ***
 ## Conclusion
 ***
