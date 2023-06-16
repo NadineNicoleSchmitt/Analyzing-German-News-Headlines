@@ -711,11 +711,34 @@ In order to interpret the resulting ideological space and work out what it *mean
 ### Extension: only headlines
 We expanded our analysis by not using the full articles and instead try to measure the politcal ideology by using only the headlines of the outlets.
 >__Note__: we collapsed all headlines from one outlet together into one single document for each outlet; we do this by grouping the corpus by outlet
-	```markdown
-	#group corpus by outlet to combine all headlines
+	
+<details>
+
+<summary>R code grouping corpus by outlet </summary>
+
+```markdown
+#group corpus by outlet to combine all headlines
 	migration_corpus_grouped <- migration_corpus %>%
   		corpus_group(outlet)
-	```
+```
+</details>
+  
+<details>
+
+<summary> Headlines category Migration </summary>
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+</details>	
+	
+<details>
+
+<summary> Headlines category Klimawandel </summary>
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+</details>	
+	
 
 	
 ### Limitations
