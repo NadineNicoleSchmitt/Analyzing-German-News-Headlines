@@ -692,20 +692,20 @@ homoEhe_wordfish <- textmodel_wordfish(x = homoEhe_dfm,
 >__Note__: The model is only identified up to a sign-flip; hence in order to specify the direction of the dimension, we used the *dir* argument to fix the relative position of two ideal points
 
 The estimated positions are stored in the *theta* object, and we get the following positions:
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/PositionHomo.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/PositionHomo.JPG" width="750">
 
 In order to interpret the resulting ideological space and work out what it *means*, we have a look at the main **discriminating words**:
 
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/wordsHomo.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/wordsHomo.JPG" width="750">
 
 
 ### Bürgergeld
 We applied the same approach as in [previous section](#homoEhe) and get the follwoing positions:
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/PositionGeld.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/PositionGeld.JPG" width="750">
 
 In order to interpret the resulting ideological space and work out what it *means*, we have a look at the main **discriminating words**:
 
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/wordsGeld.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/wordsGeld.JPG" width="750">
 
 
 ### Extension: only headlines
@@ -729,16 +729,16 @@ We expanded our analysis by not using the full articles and instead try to measu
 
 <summary> Headlines category Migration </summary>
 
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/PositionMigration.JPG" width="600">
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/wordsMigration.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/PositionMigration.JPG" width="750">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/wordsMigration.JPG" width="750">
 </details>	
 	
 <details>
 
 <summary> Headlines category Klimawandel </summary>
 
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/PositionKlima.JPG" width="600">
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/wordsKlima.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/PositionKlima.JPG" width="750">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/wordsKlima.JPG" width="750">
 </details>	
 
 ### Interpreting the results
