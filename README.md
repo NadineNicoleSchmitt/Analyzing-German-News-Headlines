@@ -634,7 +634,10 @@ We can clearly see that mandatory vaccination has become more prevalent in the l
 
 ***
 ## Text Scaling - Wordfish
-We collected data from 8 different German news **outlets** and analysed differences among them; hence it is interesting to know the **politcal ideology** of them. Looking on graphs such as [here](https://www.wahl.de/aktuell/kurz-notiert/medienlandschaft-uebersicht-deutschland/), we could get a first idea. It seems that **bild.de**, **Welt**, **FAZ** are more right-wring, ""Wirtschaftswoche** and "Handelsblatt** are central and **SZ**, **Spiegel** and **Zeit** are more left-wring.
+We collected data from 8 different German news **outlets** and analysed differences among them; hence it is interesting to know the **politcal ideology** of them. Looking on graphs such as [here](https://www.wahl.de/aktuell/kurz-notiert/medienlandschaft-uebersicht-deutschland/), we could get a first idea. It seems that **bild.de**, **Welt**, **FAZ** are more right-wring, ""Wirtschaftswoche** and "Handelsblatt** are central and **SZ**, **Spiegel** and **ZeitOnline** are more left-wring.
+	
+Going deeper into this and get more insights, we tried to use the [Wordfish model](https://tutorials.quanteda.io/machine-learning/wordfish/) to scale the ideological positions of the news outlets included in our study on an one-dimensional scale (from left to right). As we do not have any *reference texts* (i.e., we do not know the political position of any outlets), rather than using **supervised methods** to scale texts (e.g. [Wordscore](https://tutorials.quanteda.io/machine-learning/wordscores/), we used an **unsupervised method** ([Wordfish model](https://tutorials.quanteda.io/machine-learning/wordfish/), which do not require any pre-labeled data (we have no information about the position of each outlet in the ideological space). Hence, we automatically estimate an ideological space and scale the outlets on the underlying dimension on the basis of differences in the relative rate at which they use different words. Because of the fact that we did not define the dimension of interest a priori, we have to posterior interpret the resulting ideological space and work out what it *means*. 
+>__warning__: We have to make a **ideological dominace assumption**, i.e. 
 	
 study 1 of this [paper](https://journals.sagepub.com/doi/abs/10.1177/1940161220935058?journalCode=hijb)	
 	
@@ -651,5 +654,6 @@ study 1 of this [paper](https://journals.sagepub.com/doi/abs/10.1177/19401612209
 -  Going deeper into this, we could also perform a **causal inference using our headlines as a treatment**: We could analyze the causal relationship between headlines with ``negative`` sentiment (treatment) and the clicks of a headline 
 > __Note__: when using text as treatment randomization alone is not sufficient to identify the causal effect of a latent treatment, because there are other features in the headlines (such as content) which can have an impact on the click rate. Therefore one would have to control for observable cofounders).
 
-
+### Fightin' Words
+### Readability
 
