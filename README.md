@@ -119,7 +119,8 @@ getWirtschaftsWoche <- function(url) {
 </details>
            
 The R code to scrape articles for all outlets can be found [here](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WebScraping/scrapeArticles.R). 
-> __Note__: As we do not want to have each article as an *individual* document, we **collapsed** the data to the **outlet level** (i.e. we have one single document for each outlet). The collapsed articles for each outlet are then stored in a dataframe ([articlesHomoEhe.Rdata](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/articlesHomoEhe.Rdata), [ariclesBuergergeld.Rdata](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/articlesBuergergeld.Rdata)). 
+> __Note__: As we do not want to have each article as an *individual* document, we **collapsed** the data to the **outlet level** (i.e. we have one single document for each outlet). The collapsed articles for each outlet are then stored in a dataframe ([articlesHomoEhe.Rdata](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/articlesHomoEhe.Rdata), [ariclesBuergergeld.Rdata](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/articlesBuergergeld.Rdata)).
+>__Note__: we only scraped the articles for 7 outlets (all except FAZ), because FAZ has a paywall; hence without paying for each article, scraping it is impossible
 
 ### Descriptive Statistics
 
@@ -661,15 +662,32 @@ We can see, that topics 11 & 19 are more prevalent among ``NotNegative`` classif
 ### Methodology 
 We collected data from 8 different German news **outlets** and analysed differences among them; hence it is interesting to know the **politcal ideology** of them. Looking on graphs such as [here](https://www.wahl.de/aktuell/kurz-notiert/medienlandschaft-uebersicht-deutschland/), we could get a first idea: It seems that **bild.de**, **Welt** & **FAZ** are more right-wring, **Wirtschaftswoche**  & **Handelsblatt** are central and **SZ**, **Spiegel** & **ZeitOnline** are more left-wring.
 	
-Getting more insights into that, we tried to use the [Wordfish model](https://tutorials.quanteda.io/machine-learning/wordfish/) to scale the ideological positions of the news outlets included in our study on an one-dimensional scale (from left to right). As we do not have any *reference texts* (i.e., we do not know the political position of any outlets), rather than using **supervised methods** to scale texts (e.g. [Wordscore](https://tutorials.quanteda.io/machine-learning/wordscores/)), we used an **unsupervised method** ([Wordfish model](https://tutorials.quanteda.io/machine-learning/wordfish/), which do not require any pre-labeled data (we have no information about the position of each outlet in the ideological space). Hence, we automatically estimate an ideological space and scale the outlets on the underlying dimension on the basis of differences in the relative rate at which they use different words. Because of the fact that we did not define the dimension of interest a priori, we have to posterior interpret the resulting ideological space and work out what it *means*. 
->__Warning__: We have to make an **ideological dominace assumption**, i.e. we have to believe that the primary source of linguistic variation (=differences in word usage) is **political ideology**. This assumption is not always true as ideological differences can be dwarfed by other sources of variation in text such as focusing on different contents or using different writing styles. We therefore have to have in mind when interpreting our results that unsupervides scaling methods will capture the **main** source of variation.
+Getting more insights into that, we tried to use the [Wordfish model](https://tutorials.quanteda.io/machine-learning/wordfish/) to scale the ideological positions of the news outlets included in our study on a one-dimensional scale (from left to right). As we do not have any *reference texts* (i.e., we do not know the political position of any outlets), rather than using **supervised methods** to scale texts (e.g. [Wordscore](https://tutorials.quanteda.io/machine-learning/wordscores/)), we used an **unsupervised method** ([Wordfish model](https://tutorials.quanteda.io/machine-learning/wordfish/), which do not require any pre-labeled data (we have no information about the position of each outlet in the ideological space). Hence, we automatically estimate an ideological space and scale the outlets on the underlying dimension on the basis of differences in the relative rate at which they use different words. Because of the fact that we did not define the dimension of interest a priori, we have to posterior interpret the resulting ideological space and work out what it *means*. 
+>__Warning__: We have to make an **ideological dominance assumption**, i.e., we have to believe that the primary source of linguistic variation (=differences in word usage) is **political ideology**. This assumption is not always true, as ideological differences can be dwarfed by other sources of variation in text, such as focusing on different contents or using different writing styles. We, therefore, have to have in mind when interpreting our results that unsupervised scaling methods will capture the **main** source of variation.
 	
-More in detail, we followed the approach described in study 1 of this [paper](https://journals.sagepub.com/doi/abs/10.1177/1940161220935058?journalCode=hijb). They illustrated that the Wordfish model can provide valid estimates of outlets’ ideal points by scaling outlets on a **specific topic** that has been one of the *most ideologically divisive issues* in a country (they applied it to the context of Japan). Therefore, we focus
+More in detail, as headlines are quite short and are targeted to draw reader attention (as seen in our analysis above), we included **full articles** from a specific time period (see [Scraping full article](#scraping-full-article) and followed the approach described in study 1 of this [paper](https://journals.sagepub.com/doi/abs/10.1177/1940161220935058?journalCode=hijb). They illustrated that the Wordfish model could provide valid estimates of outlets’ ideal points by scaling outlets on a **specific topic** that has been one of the *most ideologically divisive issues* in a country (they applied it to the context of Japan). Therefore, we chose two topics from which we thought that they have highly ideologically divise issues in Germany:
+- **HomoEhe**: The anti-marriage-equality party line of Angela Merkel's CDU had long prevented the law for same-sex marriage from being passed. But on 26.06.2017, Angela Merkel cleared the way for the issue to win approval in the German Parliament by allowing lawmakers to elect according to their personal convictions, and the law was passed on the 30.06.2017
+- **Bürgergeld**: in autumn/ winter 2022, the traffic light coalition government replaced the controversial unemployment benefit Hart IV (which was implemented by the SPD in 2002) with a new citizens' allowance (Bürgergeld)
 
+### HomoEhe
+As described in [Scraping full article](#scraping-full-article), we do not want to have each article in the category **HomoEhe** as an *individual* document; hence we **collapsed** the data to the **outlet level** (i.e., we have one single document for each outlet). 
+	
+In order to use these texts/articles in the Wordfish Model, we created a dfm by making the following feature selections:
+- we removed punctuations, symbols and numbers
+- we removed URLs
+- we removed stopwords
+- we trimmed common and rare words (words that appear in less then 10% and more than 90% of the documents were removed) 
+	
+
+>__Note__: Some of the modelling functions here take a long time to run if there are too many features in the dfm
+
+### Bürgergeld
+### Extension: only headlines 
+### Conclusion
 ### Limitations
-- As we did not measure political ideology (variation in word use does not appear to be primarily driven by differences in ideology), we could try in a further research to use supervised scaling methods (e.g. Wordscores), in which we add oulets from which we exactly know their political position (e.g. [SoZOnline](https://www.sozonline.de/), who describes itself as socialist outlet) and use them as reference texts
->__Note__: we also have to make the **ideological dominace assumption** here
-- We chose two topics (HomoEhe, Bürgergeld) from which we thought that they have high ideologically divise issues, but we could extend our approach to other topics and see if we get different results
+- As we did not measure political ideology (variation in word use does not appear to be primarily driven by differences in ideology), we could try in further research to use supervised scaling methods (e.g., Wordscores), in which we add outlets from which we exactly know their political position (e.g. [SoZOnline](https://www.sozonline.de/), who describes itself as socialist outlet) and use them as reference texts
+>__Note__: we also have to make the **ideological dominance assumption** here
+- We chose two topics (HomoEhe, Bürgergeld) from which we thought that they have highly ideologically divise issues, but we could extend our approach to other topics and see if we get different results
 	
 	
 ***
