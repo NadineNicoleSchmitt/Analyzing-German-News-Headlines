@@ -635,9 +635,14 @@ As shown [above](#most-distinctive-words-for-each-topic) topics 1, 11, 18 & 19 c
 | **Topic**          | **Interpretation**                            | 
 |:------------------:|:---------------------------------------------:|
 | 1                  | Mandatory Vaccination                         | 
-| 11                 |2G/ 3G; no restrictions for vaccinated people  | 
+| 11                 | 2G/3G; no restrictions for vaccinated people  | 
 | 18                 | restrictions, police                          | 
-| 19                 | vaccines, permit                              | 
+| 19                 | vaccines, permit                              |
+
+Estimating the difference in topic usage for these 4 topics between ``negative`` and ``NotNegative`` classified headlines we get interesting insights:
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+
 	
 ### Limitations STM
 - We applied STM only on category **Coronavirus** and it would be interesting to see this analysis also for the other categories/ we only inspected one topic (manadatory vaccination); hence we should further investigate other topics
