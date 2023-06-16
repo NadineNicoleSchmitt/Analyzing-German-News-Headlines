@@ -667,9 +667,9 @@ Getting more insights into that, we tried to use the [Wordfish model](https://tu
 More in detail, we followed the approach described in study 1 of this [paper](https://journals.sagepub.com/doi/abs/10.1177/1940161220935058?journalCode=hijb). They illustrated that the Wordfish model can provide valid estimates of outlets’ ideal points by scaling outlets on a **specific topic** that has been one of the *most ideologically divisive issues* in a country (they applied it to the context of Japan). Therefore, we focus
 
 ### Limitations
-- As we did not measure political ideology (variation in word use does not appear to be primarily driven by differences in ideology), we could try in a further research to use supervised scaling methods (e.g. Wordscores), in which we add oulets from which we exactly know their political position (e.g. ) and use them as reference texts
+- As we did not measure political ideology (variation in word use does not appear to be primarily driven by differences in ideology), we could try in a further research to use supervised scaling methods (e.g. Wordscores), in which we add oulets from which we exactly know their political position (e.g. [SoZOnline](https://www.sozonline.de/), who describes itself as socialist outlet) and use them as reference texts
 >__Note__: we also have to make the **ideological dominace assumption** here
-- 
+- We chose two topics (HomoEhe, Bürgergeld) from which we thought that they have high ideologically divise issues, but we could extend our approach to other topics and see if we get different results
 	
 	
 ***
