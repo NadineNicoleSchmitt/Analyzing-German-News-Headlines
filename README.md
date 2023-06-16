@@ -673,17 +673,51 @@ More in detail, as headlines are quite short and are targeted to draw reader att
 As described in [Scraping full article](#scraping-full-article), we do not want to have each article in the category **HomoEhe** as an *individual* document; hence we **collapsed** the data to the **outlet level** (i.e., we have one single document for each outlet). 
 	
 In order to use these texts/articles in the Wordfish Model, we created a dfm by making the following feature selections:
-- we removed punctuations, symbols and numbers
+- we removed punctuations, symbols, and numbers
 - we removed URLs
 - we removed stopwords
-- we trimmed common and rare words (words that appear in less then 10% and more than 90% of the documents were removed) 
+- we trimmed common and rare words (words that appear in less than 10% and more than 90% of the documents were removed) 
+	
+>__Note__: Some of the modeling functions here take a long time to run if there are too many features in the dfm
+	
+Afterward, we used the following R code to estimate the Wordfish model:
+
+```markdown
+#estimate Wordfish model
+
+homoEhe_wordfish <- textmodel_wordfish(x = homoEhe_dfm,
+                                           dir =c(which(buergergeld_dfm$outlet == "Spiegel"),
+                                                  which(buergergeld_dfm$outlet == "Bild")))	
+```
+>__Note__: The model is only identified up to a sign-flip; hence in order to specify the direction of the dimension, we used the *dir* argument to fix the relative position of two ideal points
+
+The estimated positions are stored in the *theta* object, and we get the following positions:
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+
+In order to interpret the resulting ideological space and work out what it *means*, we have a look at the main **discriminating words**:
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
 	
 
->__Note__: Some of the modelling functions here take a long time to run if there are too many features in the dfm
-
 ### Bürgergeld
-### Extension: only headlines 
-### Conclusion
+We applied the same approach as in [previous section](#homoEhe) and get the follwoing positions:
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+
+In order to interpret the resulting ideological space and work out what it *means*, we have a look at the main **discriminating words**:
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+
+
+### Extension: only headlines
+We expanded our analysis by not using the full articles and instead try to measure the politcal ideology by using only the headlines of the outlets.
+>__Note__: we collapsed all headlines from one outlet together into one single document for each outlet; we do this by grouping the corpus by outlet
+	```markdown
+	#group corpus by outlet to combine all headlines
+	migration_corpus_grouped <- migration_corpus %>%
+  		corpus_group(outlet)
+	```
+
+	
 ### Limitations
 - As we did not measure political ideology (variation in word use does not appear to be primarily driven by differences in ideology), we could try in further research to use supervised scaling methods (e.g., Wordscores), in which we add outlets from which we exactly know their political position (e.g. [SoZOnline](https://www.sozonline.de/), who describes itself as socialist outlet) and use them as reference texts
 >__Note__: we also have to make the **ideological dominance assumption** here
