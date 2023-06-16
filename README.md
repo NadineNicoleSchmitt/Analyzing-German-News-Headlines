@@ -613,7 +613,8 @@ effect_sentiment <-plot.estimateEffect(stm_effects, covariate = "classificationN
 effect_year <-plot.estimateEffect(stm_effects, covariate = "year", method = "pointestimate")
 #effect_sentiment_diff <-plot.estimateEffect(stm_effects, covariate = "classificationNaiveBayes", method = "difference", cov.value1 = 1, cov.value2 = 0)
 ```
-
+The following plots illustrate the topic proportions of topic 1 for each level of covariate:
+							  
 ##### Do different outlets report about mandatory vaccination in different rates?
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectOutlet.JPG" width="600">
 	
@@ -642,10 +643,14 @@ As shown [above](#most-distinctive-words-for-each-topic) topics 1, 11, 18 & 19 c
 Estimating the difference in topic usage for these 4 topics between ``negative`` and ``NotNegative`` classified headlines we get interesting insights:
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/Effect_all.JPG" width="600">
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/Effect_all_diff.JPG" width="600">
-
+	
+While the first plot shows the topic proportions of the 4 topics for each level of covariate (``negative``/ ``NotNegative``), the second plot illustrates the estimated difference in topic usage. For example,  topic 19 has a topic proportion of 0.1 among ``negative`` classified headlines and a topic proprtions of 0.035 among ``NotNegative`` classified headlines; hence the difference in topic usage is 0.035 - 0.1 = -0.065. 
+	
+We can see, that topics 11 & 19 are more prevalent among ``NotNegative`` classified headlines, while topics 1 & 18 are more prevalent among ``negative`` classified headlines. This is fascinating because especially topic 19 (vaccines) were highly controversal discussed among Germans (especially in 2023 when more and more vaccination damages are explored) and the question arises, if the media covers the political opinion/ discussion of the public or if they report more positively in terms of vaccines to get more people thinking positivly about vaccines.
 	
 ### Limitations STM
-- We applied STM only on category **Coronavirus** and it would be interesting to see this analysis also for the other categories/ we only inspected one topic (manadatory vaccination); hence we should further investigate other topics
+- We applied STM only on category **Coronavirus** and it would be interesting to see this analysis also for the other categories/ we only inspected some topics; hence we should further investigate other topics
+- in order to find an answer to the upcoming question decribed in [More topics](#more-topics), we could investigate if there is a correlation between the ``sentiment`` of headlines and the public opinion reflected in polls
 - We included ``year``, ``sentiment`` and ``outlet`` as **metadata**, but also other covariates such as gender of the author/ etc. could be incoporated
 - We focused our analysis on the difference in **topic prevalence** and not in **topic content**, but this would be also interesting to analyse in a further research (e.g. how do outlets use words differently within a given topic?/ do ``negative`` classified headlines use words differently in a given topic (such as lockdown) than ``NonNegative`` classified headlines?)
 - We tried to maximize **Semantic Coherence** (=Do the most common words from a topic also co-occur together frequently in the same documents/ headlines?) and **Exclusivity** (=Do words with high probability in one topic have low probabilities in others?) (see [Search for best k](#search-for-best-k)); but rather than using **quantitative metrics** (prediction) to evaluate our model, we should also focus more on **qualitative metrics** as there tends to be a negative correlation between quantitative diagnostics and human judgements. We could for example expand our *Face Validating* (show sample headlines associated with a topic), investigate if variation in topic usage correspong to an known event (e.g. start of lockdown), or apply semantic validity as decribed by [Chang et al., 2009](https://proceedings.neurips.cc/paper/2009/file/f92586a25bb3145facd64ab20fd554ff-Paper.pdf)
