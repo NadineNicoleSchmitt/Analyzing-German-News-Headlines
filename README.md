@@ -703,11 +703,11 @@ It seems that the model is essential discovering that the main source of variati
 
 ### Bürgergeld
 We applied the same approach as in [previous section](#homoEhe) and get the follwoing positions:
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/PositionGeld.JPG" width="600">
 
 In order to interpret the resulting ideological space and work out what it *means*, we have a look at the main **discriminating words**:
 
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/wordsGeld.JPG" width="600">
 
 
 ### Extension: only headlines
@@ -724,13 +724,15 @@ We expanded our analysis by not using the full articles and instead try to measu
   		corpus_group(outlet)
 ```
 </details>
+	
+>__Note__: we used the headlines; hence we also could inculde outlet **FAZ** in our analysis 
   
 <details>
 
 <summary> Headlines category Migration </summary>
 
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/PositionMigration.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/wordsMigration.JPG" width="600">
 </details>	
 	
 <details>
