@@ -692,12 +692,14 @@ homoEhe_wordfish <- textmodel_wordfish(x = homoEhe_dfm,
 >__Note__: The model is only identified up to a sign-flip; hence in order to specify the direction of the dimension, we used the *dir* argument to fix the relative position of two ideal points
 
 The estimated positions are stored in the *theta* object, and we get the following positions:
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/PositionHomo.JPG" width="600">
 
 In order to interpret the resulting ideological space and work out what it *means*, we have a look at the main **discriminating words**:
 
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
-	
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/wordsHomo.JPG" width="600">
+
+It seems that the model is essential discovering that the main source of variation in word usage is related to topic content of the outlets' articles (rather than the ideological position of the outlets). While 
+
 
 ### Bürgergeld
 We applied the same approach as in [previous section](#homoEhe) and get the follwoing positions:
