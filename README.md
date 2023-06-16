@@ -616,15 +616,28 @@ effect_year <-plot.estimateEffect(stm_effects, covariate = "year", method = "poi
 
 ##### Do different outlets report about mandatory vaccination in different rates?
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectOutlet.JPG" width="600">
-We can see that mandatory vaccination was most discussed by the outlets **Welt** and **FAZ**, while **SZ** and **Wirtschaftswoche** focused less on it.
+	
+We can see that mandatory vaccination was most discussed by the outlets **Welt** & **FAZ**, while **SZ** & **Wirtschaftswoche** focused less on it.
 	
 ##### Is the topic mandatory vaccination more common among headlines with ``negative`` sentiment?
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectSentiment.JPG" width="600"> 
+
 As expected, mandatory vaccination is more prevalent among headlines with ``negative`` sentiment.
 	
 ##### In which year was the topic mandatory vaccination most/ less prevalent?
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+
 We can clearly see that mandatory vaccination has become more prevalent in the last years during the crisis.
+
+### More topics
+As shown [above](#most-distinctive-words-for-each-topic) topics 1, 11, 18 & 19 can be interpretd as following:
+
+| **Topic**          | **Interpretation**                            | 
+|:------------------:|:---------------------------------------------:|
+| 1                  | Mandatory Vaccination                         | 
+| 11                 |2G/ 3G; no restrictions for vaccinated people  | 
+| 18                 | restrictions, police                          | 
+| 19                 | vaccines, permit                              | 
 	
 ### Limitations STM
 - We applied STM only on category **Coronavirus** and it would be interesting to see this analysis also for the other categories/ we only inspected one topic (manadatory vaccination); hence we should further investigate other topics
