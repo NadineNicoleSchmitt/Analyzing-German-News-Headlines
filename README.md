@@ -739,8 +739,8 @@ We expanded our analysis by not using the full articles and instead try to measu
 
 <summary> Headlines category Klimawandel </summary>
 
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/PositionKlima.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TextScaling/wordsKlima.JPG" width="600">
 </details>	
 	
 
