@@ -640,8 +640,8 @@ As shown [above](#most-distinctive-words-for-each-topic) topics 1, 11, 18 & 19 c
 | 19                 | vaccines, permit                              |
 
 Estimating the difference in topic usage for these 4 topics between ``negative`` and ``NotNegative`` classified headlines we get interesting insights:
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectYear.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/Effect_all.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/Effect_all_diff.JPG" width="600">
 
 	
 ### Limitations STM
