@@ -761,12 +761,14 @@ It seems that the models are essentially discovering that the main source of var
 ## Further Limitations
 - We collected news headlines from eight different **categories** and 8 different news **outlets**, and it would be interesting to see if we get different results when including other categories (such as sports or finance) and more/ other outlets. 
 - We did not include **metadata** such as the gender of the author, and it would be interesting to see if this impacts the headline's sentiment.
-- We analyses German news headlines and it would be interesting to see if we get the same results when we apply this to **other countries** in the world
+- We analyze German news headlines, and it would be interesting to see if we get the same results when we apply this to **other countries** in the world
 - Besides, as described in our [introduction](#introduction), user-tracking technology to measure content reach grew throughout the 2010s. We, therefore, could expand the analysis to a **broader time frame** (e.g., starting in 2003) and see if we get different results in this earlier period 
 >__Note__: collecting data for this time frame could be very hard.
--  Going deeper into this, we could also perform a **causal inference using our headlines as a treatment**: We could analyze the causal relationship between headlines with ``negative`` sentiment (treatment) and the clicks of a headline 
-> __Note__: when using text as treatment randomization alone is not sufficient to identify the causal effect of a latent treatment, because there are other features in the headlines (such as content) which can have an impact on the click rate. Therefore one would have to control for observable cofounders).
+- In order to get a better understanding of how language is used differently between ``negative`` and ``NotNegative`` classified headlines, we could (1) extend our STM and use covariates in topic content (see [STM Limitations](#stm-limitations)) or (2) apply the **Fighin' Words** approach to visualize the difference in word use across groups
+- We have already shown that headlines from some outlets are longer (see [Ntoken](#ntoken)), but we could go deeper into this and try to investigate how the complexity of language differs between outlets or ``negative``/ ``NotNegative`` classified headlines by calculating **Readability scores**
+-  Furthermore, we could also perform a **causal inference using our headlines as a treatment**: We could analyze the causal relationship between headlines with ``negative`` sentiment (treatment) and the clicks of a headline 
+> __Note__: when using text as treatment, randomization alone is not sufficient to identify the causal effect of a latent treatment because there are other features in the headlines (such as content) that can have an impact on the click rate. Therefore one would have to control for observable cofounders).
+- Moreover, it would be very interesting to see if there is a correlation between the sentiment of the headline and the sentiment of the full article. E.g., are there articles with predominantly ``neutral/ positive`` sentiment, but their headlines are expressed with a ``negative`` sentiment?
+- Finally, we could further analyze how readers react to headlines/ articles with a different sentiment by analyzing their **comments** on the article
 
-### Fightin' Words
-### Readability
 
