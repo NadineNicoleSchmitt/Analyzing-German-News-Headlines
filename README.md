@@ -586,7 +586,10 @@ similarities <- function(target_word, n, embedding){
 }
 ```
 </details>
+In the following the 10 most similar words of some sample words are represented, which makes completely sense:
 
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/Similarities.JPG" width="750">
+https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/Similarities.JPG
 	
 ### Evaluation - Word Similarity Task
 This task is based on the idea that the similarity between two words can be measured with the cosine similarity of their word embeddings. A list of word pairs along with their similarity rating, which human annotators judge, is used for this task, and the following gold standards are used:
