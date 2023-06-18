@@ -651,16 +651,23 @@ This task is based on the idea that the similarity between two words can be meas
 
 >__Note__: As these lists are provided in English language, we translated them into German (see these [files](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/tree/main/WordEmbeddings/WordSimilarityTask)) using the same approach as in [Translation of LSD](#translation-of-lsd)
 
-The evaluation task is to measure how well the notion of word similarity according to human annotators is captured by the word embeddings. In other words, the distances between words in an embedding space can be evaluated through the human judgments on the actual semantic distances between these words. Once the cosine similarity between the words is computed, the two obtained distances are then compared with each other using Pearson or Spearman correlation. The more similar they are (i.e. Pearson or Spearman score is close to 1), the better are the embeddings. 
+The evaluation task is to measure how well the notion of word similarity according to human annotators is captured by the word embeddings. In other words, the distances between words in an embedding space can be evaluated through the human judgments on the actual semantic distances between these words. Once the cosine similarity between the words is computed, the two obtained distances are then compared with each other using Pearson correlation. The more similar they are (i.e. score is close to 1), the better are the embeddings.
 
-### Compare two Pearson correlations
-In order to compare two Pearson correlations the [cocor package in R](https://cran.r-project.org/web/packages/cocor/cocor.pdf) is used. It can be downloaded from the [project's homepage](https://CRAN.R-project.org/package=cocor). 
+>__Warning__: As there are some words in the gold standards, which are not in our word embeddings, we set the score to 0
 
-Subsequent to the above steps, the cocor package can be used to compare two Pearson correlations. It is done for a _dependent overlapping group_ by using following function in R (see the [R script](https://github.com/Nadine-Schmitt/bachelorThesis-nadischm/blob/master/Code/cocor.Rmd)):
+In the following table, the performance scores for our self-trained and pre-trained word embeddings are given (the better one is highlighted in green):
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/PerformanceSimilarityTask.JPG" width="750">
+
+
+
+#### Compare two Pearson correlations
+In order to compare two Pearson correlations the [cocor package in R](https://cran.r-project.org/web/packages/cocor/cocor.pdf) is used. It is done for a _dependent overlapping group_ by using following function in R:
 ```markdown
 cocor.dep.groups.overlap(r.jk, r.jh, r.kh, n, alternative = "two.sided", test = "all", alpha = 0.05, conf.level = 0.95, null.value = 0, data.name = NULL, var.labels = NULL, return.htest = FALSE)
 ```
-where following arguments as input are required: 
+<details>
+<summary>Description of input arguments </summary>.
+
 - **r.jk** is a number specifying the correlation between j and k (this correlation is used for comparison). 
 - **r.jh** is a number specifying the correlation between j and h (this correlation is used for comparison).
 - **r.kh** is a number specifying the correlation between k and h.
@@ -673,16 +680,20 @@ where following arguments as input are required:
 - **data.name** is a character string giving the name of the data/group.
 - **var.labels** is a vector of three character strings specifying the labels for j, k, and h (in this order).
 - **return.htest** is a logical indicating whether the result should be returned as a list containing a list of class htest for each test. The default value is FALSE.
+	
+</details>	
 
-Illustrating this, an example of the comparison between the two Pearson scores for Similarity353 for the best models with parameter setting (300,3,5,1,0,16) is shown in the following. As output from the training and evaluation a Pearson score of 0.786 for the raw model and 0.793 for the entity embedding is the result. As also the intercorrelation between the two correlations is needed as input parameter, the correlation between the cosine similarities of the raw model with the cosine similarities of the entity model is computed and given as 0.012. Besides, the Similaritym353 dataset has a size of 203 instances. Therefore following need to be typed in to the R command line in order to compare the two Pearson correlations:
+Illustrating this, an example of the comparison between the two Pearson scores for gold standard Similarity353 is shown in the following. We have a Pearson score of 0.253 for the self-trained embeddings and 0.557 for the pre-trained embeddings. As also the intercorrelation between the two correlations is needed as input parameter, the correlation between the cosine similarities of the self-trained embeddings with the cosine similarities of the pre-trained embeddings is computed and given as 0.632. Moreover, the Similaritym353 dataset has a size of 203 instances. Therefore following need to be typed in to the R command line in order to compare the two Pearson correlations:
 ```markdown
-cocor.dep.groups.overlap(r.jk= 0.786, r.jh= 0.793, r.kh= 0.012, n=203, alternative="two.sided", alpha=0.05, conf.level=0.95, null.value=0)
+cocor.dep.groups.overlap(r.jk= 0.253 , r.jh= 0.557, 
+                         r.kh= 0.632, n=203, 
+                         alternative="two.sided", alpha=0.05, conf.level=0.95, null.value=0)
 ````
-As output all results of the tests are shown and the null hypothesis is for this example always retained:
+As output all results of the tests are shown and the null hypothesis is for this example always retained (for the 2 other standards as well):
 
-![OutputCocot](https://user-images.githubusercontent.com/48829194/62342257-86e2d080-b4e6-11e9-8685-94fb930be027.PNG)
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/CocorWordSim.JPG" width="600">
 
-All the calculated results can be seen on the [excel files](https://github.com/Nadine-Schmitt/bachelorThesis-nadischm/tree/master/Results/ResultsCocor).
+
 
 ### Limitations
 - Our self-trained word embeddings perform badly, which could be due to the fact that a large amount of corpora is needed to train *good* word embeddings (news headlines are quite short); hence rather than only  use headlines, we should train them on large corpora (i.e., full news articles)
