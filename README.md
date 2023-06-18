@@ -469,7 +469,7 @@ We can see that we have got a 179,604 x 179,604 matrix and that, for example, fe
 
 Given this representations, we created some plots showing the relationship between the top features in our corpus (edges show co-occurrences of features):
 
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkAll.JPG" width="750">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkAll.JPG" width="900">
 	
 <details>
 <summary>Network for corpus including headlines from category Arbeitsmarkt </summary>.
