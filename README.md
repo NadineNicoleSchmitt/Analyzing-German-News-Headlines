@@ -463,7 +463,8 @@ headlines_fcm <- headlines_corpus %>%
 <summary>Feature co-occurrence matrix </summary>.
 
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/co-occMatrix.JPG" width="600">
-We can see that we have got a 179,604 x 179,604 matrix and that, for example, feature *spd* appears within 3 words of the feature *union* 363 times. However, the word *afd* never occurs appears within 3 words of the word *koalitionsverhandlungen* in this corpus. 
+	
+We can see that we have got a 179,604 x 179,604 matrix and that, for example, feature *spd* appears 363 times within 3 words of the feature *union*. However, the word *afd* never appears within 3 words of the word *koalitionsverhandlungen* in this corpus. 
 </details>	
 
 	
