@@ -139,6 +139,17 @@ ggarrange(p1, p2, p3, p4,
           labels = c("A", "B", "C", "D"),
           ncol = 2, nrow = 2)
 
+
+#use sentiment as moderator and plot topic proportions for each outlet for negative/NotNegative headlines
+plot.estimateEffect(stm_effects, covariate = "outlet", moderator ="classificationNaiveBayes", 
+                    moderator.value = "Negative", method = "pointestimate", main  ="Topic Proportions Topic 1 (mandatory vaccination) of negative classified headlines for different outlets")
+plot.estimateEffect(stm_effects, covariate = "outlet", moderator ="classificationNaiveBayes", 
+                    moderator.value = "NotNegative", method = "pointestimate", main ="Topic Proportions Topic 1 (mandatory vaccination) of NotNegative classified headlines for different outlets")
+
+
+
+
+
 #content 
 #plot(model, topics= c(12), type ="perspectives", main= labelTopics(model, n=3)$frex[12,])
 #labelTopics(model, n=3)
