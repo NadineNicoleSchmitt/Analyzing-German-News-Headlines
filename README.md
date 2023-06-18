@@ -517,8 +517,46 @@ Given this representations, we created some plots showing the relationship betwe
 <summary>Network for corpus including headlines from category Ukraine </summary>.
 
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkUkraine.JPG" width="900">	
-</details>	
+</details>
+	
+### Usage of Word Embeddings
+We can clearly see that co-occurence vectors capture something about the meaning of words, but they tend to be very *sparse* (the dimension of the matrix increase in the size of the vocabulary of the corpus because the matrix has as many rows and as many columns as there are words in the vocabulary). To overcome this, we use word embeddings, which have a low-dimensional represenation of the features in our corpus.
 
+We used **pre-trained** German Word Embeddings (GloVe), which are trained on the whole German Wikipedia corpus (downloaded [here](https://www.deepset.ai/german-word-embeddings)) and used the GloVe approach to train our **self-trained** word embeddings on the headlines corpus:
+
+```markdown
+#create corpus
+headlines_corpus <- corpus(headlines,
+                           text_field = "title")
+
+#create fcm
+#not removing stopwords, punct, numbers
+headlines_fcm <- headlines_corpus %>%
+  tokens() %>%
+  tokens_tolower() %>%
+  #tokens_remove(stopwords("de")) %>%
+  #tokens(remove_punct = TRUE) %>%
+  #tokens(remove_numbers = TRUE) %>%
+  fcm(context ="window",
+      window =3,
+      tri = FALSE)
+headlines_fcm
+dim(headlines_fcm)
+
+
+#fit GloVe model
+glove = GlobalVectors$new(rank=150, x_max =2500L, learning_rate=.145)
+headlines_main = glove$fit_transform(headlines_fcm, n_iter=500, convergence_tol = 0.005,
+                                     n_threads=3)
+#extract word embeddinngs
+headlines_context = glove$components
+word_vectors = headlines_main + t(headlines_context)
+str(word_vectors)
+
+save(word_vectors, file= "wordEmbeddingsGloVe.Rdata")
+```
+
+>__Note__: The word embeddings are too large and therefore cannot provided in this repository; hence if you would like to use them you have to download them/ run the code above
 	
 ### Evaluation - Word Similarity Task
 This task is based on the idea that the similarity between two words can be measured with the cosine similarity of their word embeddings. A list of word pairs along with their similarity rating, which human annotators judge, is used for this task, and the following gold standards are used:
@@ -563,7 +601,7 @@ All the calculated results can be seen on the [excel files](https://github.com/N
 ### Limitations
 - Our self-trained word embeddings perform badly which could be due to the fact that a large amount of corpora is needed to train *good* word embeddings (news headlines are quite short); hence rather than only  use headlines we should train them on large corpora (i.e., full news articles)
 - we did not perform **hyper-parameter tuning** when training the GloVe word embeddings to identify the best parameters for training and therefore in a further research this should be done
-- we only used GLoVe
+- we only used GLoVe and we could use other algorithms such as Word2Vec to train our embeddings
 ***
 	
 ## Topic Model - STM
