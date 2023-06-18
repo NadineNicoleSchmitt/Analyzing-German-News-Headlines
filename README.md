@@ -14,7 +14,7 @@ In order to find answers to this question, we applied several quantitative text 
 
 ## Data
 ### Collecting Data
-For our analysis, we collected in total 548,629 ${\color{violet} 548,629 \space German \space news \space headlines}$ over a ``10-year time frame`` (01.01.2013 to 30.04.2023) from ``8 different news outlets`` and ``8 different categories``:
+For our analysis, we collected in total ${\color{violet} 548,629 \space German \space news \space headlines}$ over a ``10-year time frame`` (01.01.2013 to 30.04.2023) from ``8 different news outlets`` and ``8 different categories``:
 ![CountHeadlines.JPG](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Data/CountHeadlines.JPG)
 
 We used [MediaCloud.org](https://search.mediacloud.org/search?) to collect the headlines for the outlets **bild.de** and **Spiegel**. Due to the fact that Mediacloud API has an API request/rate limit, we downloaded the headlines as csv file manually from their webside. Headlines for the other **outlets** are not available on MediaCloud and therefore we scraped them directly from the outlets archive websides using [WebScraper.io](https://webscraper.io/) (Google Chrome Extension). In the following a sample SiteMap for scraping the headlines for the outlet **SZ** in category **Digitalisierung** is shown:
@@ -499,16 +499,16 @@ Given this representations, we created some plots showing the relationship betwe
 </details>
 
 <details>
-<summary>Network for corpus including headlines from category Digitalisierung </summary>.
-
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkDig.JPG" width="900">	
-</details>	
-
-<details>
 <summary>Network for corpus including headlines from category Coronavirus </summary>.
 
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkCovid.JPG" width="900">	
 </details>
+	
+<details>
+<summary>Network for corpus including headlines from category Digitalisierung </summary>.
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkDig.JPG" width="900">	
+</details>	
 
 <details>
 <summary>Network for corpus including headlines from category Klimawandel </summary>.
