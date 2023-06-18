@@ -590,6 +590,12 @@ similarities <- function(target_word, n, embedding){
 In the following the 10 most similar words of some sample words are represented, which makes completely sense:
 
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/Similarities.JPG" width="750">
+	
+The following superheat visualizes the cosine similarity for the 40 most common words in our corpus:
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/Superheat.JPG" width="750">
+
+>__Note__: Since the diagonal similarity values are all 1 (the similarity of a word with itself is 1), #and this can skew the color scale, we make a point of setting these values to NA
 
 ### Analogy
 Word embeddings can also capture **analogies** (= linguistic expressions which describe processes of transferring information from one subject to another) via their geometry. Were therefore also calculated some analogies:
