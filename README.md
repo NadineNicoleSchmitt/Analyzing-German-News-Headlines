@@ -558,6 +558,36 @@ save(word_vectors, file= "wordEmbeddingsGloVe.Rdata")
 
 >__Note__: The word embeddings are too large and therefore cannot provided in this repository; hence if you would like to use them you have to download them/ run the code above
 	
+### Similarity
+
+In order to get a better understanding of our self-trained word embeddings, we calculate similarities between words:
+	
+<details>
+<summary>R code to calculate similarities </summary>.
+
+```markdown
+#target_word: word for which we would like to calculate similarities
+#n: number of nearest neighbouring words returned
+#embedding: word embeddings
+similarities <- function(target_word, n, embedding){
+  
+  # Extract embedding of target word
+  target_vector <- embedding[which(rownames(embedding) %in% target_word),]  
+  
+  # Calculate cosine similarity between target word and other words
+  target_sim <- sim2(embedding, matrix(target_vector, nrow = 1))
+  
+  # Report nearest neighbours of target word
+  names(sort(target_sim[,1], decreasing = T))[1:n]
+  
+  #report also similarity score
+  sort(target_sim[,1], decreasing = T)[1:n]
+  
+}
+```
+</details>
+
+	
 ### Evaluation - Word Similarity Task
 This task is based on the idea that the similarity between two words can be measured with the cosine similarity of their word embeddings. A list of word pairs along with their similarity rating, which human annotators judge, is used for this task, and the following gold standards are used:
 
