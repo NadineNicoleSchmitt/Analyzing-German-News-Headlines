@@ -651,17 +651,18 @@ This task is based on the idea that the similarity between two words can be meas
 
 >__Note__: As these lists are provided in English language, we translated them into German (see these [files](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/tree/main/WordEmbeddings/WordSimilarityTask)) using the same approach as in [Translation of LSD](#translation-of-lsd)
 
-The evaluation task is to measure how well the notion of word similarity according to human annotators is captured by the word embeddings. In other words, the distances between words in an embedding space can be evaluated through the human judgments on the actual semantic distances between these words. Once the cosine similarity between the words is computed, the two obtained distances are then compared with each other using Pearson correlation. The more similar they are (i.e. score is close to 1), the better are the embeddings.
+The evaluation task is to measure how well the notion of word similarity, according to human annotators, is captured by the word embeddings. In other words, the distances between words in an embedding space can be evaluated through human judgments of the actual semantic distances between these words. Once the cosine similarity between the words is computed, the two obtained distances are compared using Pearson correlation. The more similar they are (i.e., the score is close to 1), the better the embeddings are.
 
 >__Warning__: As there are some words in the gold standards, which are not in our word embeddings, we set the score to 0
 
 In the following table, the performance scores for our self-trained and pre-trained word embeddings are given (the better one is highlighted in green):
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/PerformanceSimilarityTask.JPG" width="750">
+	
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/PerformanceSimilarityTask.JPG" width="1000">
 
+We can see that the pre-trained embeddings outperform our self-trained embeddings in all 3 gold standards. However, while word similarity benchmarks are widely used for intrinsic embedding evaluation, they are biased in the sense that good intrinsic evaluation scores do not imply useful embeddings for downstream tasks, as shown by [Faruqui, M. et al., 2016](https://arxiv.org/abs/1605.02276). Therefore we used both for our [Dictionary Expansion with Word Embeddings](#dictionary-expansion-with-word-embeddings) (but we saw there as well that the pre-trained embeddings performed better).
 
-
-#### Compare two Pearson correlations
-In order to compare two Pearson correlations the [cocor package in R](https://cran.r-project.org/web/packages/cocor/cocor.pdf) is used. It is done for a _dependent overlapping group_ by using following function in R:
+	#### Compare two Pearson correlations
+In order to compare two Pearson correlations, the [cocor package in R](https://cran.r-project.org/web/packages/cocor/cocor.pdf) is used. It is done for a _dependent overlapping group_ by using the following function in R:
 ```markdown
 cocor.dep.groups.overlap(r.jk, r.jh, r.kh, n, alternative = "two.sided", test = "all", alpha = 0.05, conf.level = 0.95, null.value = 0, data.name = NULL, var.labels = NULL, return.htest = FALSE)
 ```
