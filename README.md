@@ -640,11 +640,16 @@ In the following some samples for the analogy task are given:
 
 	
 ### Evaluation - Word Similarity Task
-This task is based on the idea that the similarity between two words can be measured with the cosine similarity of their word embeddings. A list of word pairs along with their similarity rating, which human annotators judge, is used for this task, and the following gold standards are used:
 
-- Similarity353 
-- RG65 
-- SimLex999 
+In order to evaluate the performance of word embeddings, we can use **instrinsic** evaluation tasks and one of them is the **Word Similarity Task**.
+
+This task is based on the idea that the similarity between two words can be measured with the cosine similarity of their word embeddings. There are existing **gold standards**, which are lists of word pairs and each pair of words have a human annotated similarity rating. We used the following gold standards:
+
+- [Similarity353](http://alfonseca.org/eng/research/wordsim353.html): contains 203 instances of similiar word pairs, which are classified as synonyms, antonyms, identical and unrelated pairs 
+- [RG65](https://github.com/alexanderpanchenko/sim-eval): contains 65 word pairs along with their similarity scores assigned on a discrete 0-4 scale by 24 subjects 
+- [SimLex999](https://fh295.github.io/simlex.html): As the name of the dataset is saying, 999 pairs of human-labeled examples of semantic relatedness are comprised by it 
+
+>__Note__: As these lists are provided in English language, we translated them into German (see these [files](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/tree/main/WordEmbeddings/WordSimilarityTask)) using the same approach as in [Translation of LSD](#translation-of-lsd)
 
 The evaluation task is to measure how well the notion of word similarity according to human annotators is captured by the word embeddings. In other words, the distances between words in an embedding space can be evaluated through the human judgments on the actual semantic distances between these words. Once the cosine similarity between the words is computed, the two obtained distances are then compared with each other using Pearson or Spearman correlation. The more similar they are (i.e. Pearson or Spearman score is close to 1), the better are the embeddings. 
 
@@ -680,9 +685,12 @@ As output all results of the tests are shown and the null hypothesis is for this
 All the calculated results can be seen on the [excel files](https://github.com/Nadine-Schmitt/bachelorThesis-nadischm/tree/master/Results/ResultsCocor).
 
 ### Limitations
-- Our self-trained word embeddings perform badly which could be due to the fact that a large amount of corpora is needed to train *good* word embeddings (news headlines are quite short); hence rather than only  use headlines we should train them on large corpora (i.e., full news articles)
-- we did not perform **hyper-parameter tuning** when training the GloVe word embeddings to identify the best parameters for training and therefore in a further research this should be done
-- we only used GLoVe and we could use other algorithms such as Word2Vec to train our embeddings
+- Our self-trained word embeddings perform badly, which could be due to the fact that a large amount of corpora is needed to train *good* word embeddings (news headlines are quite short); hence rather than only  use headlines, we should train them on large corpora (i.e., full news articles)
+- we did not perform **hyper-parameter tuning** when training the GloVe word embeddings to identify the best parameters for training, and therefore in further research, this should be done
+- we only used GLoVe, and we could use other algorithms, such as Word2Vec/ BERT, to train our embeddings
+- we only used 3 gold standards in our intrinsic evaluation task, and we could include more of them (such as [MEN](https://staff.fnwi.uva.nl/e.bruni/MEN), [MTurk](http://www.kiraradinsky.com/Datasets.html), etc.); we translated them manually, and there are some existing translations in the literature, which we should use and see if we get better performance scores
+>__Note__: For example, a German translation of the Similarity353 test collection is provided by [Leviant and Reichert, 2015](http://leviants.com/ira.leviant/MultilingualVSMdata.html)
+- moreover, we only performed one intrinsic evaluation task, and we could also extend this with others (such as Word analogy)
 ***
 	
 ## Topic Model - STM
