@@ -474,10 +474,50 @@ Given this representations, we created some plots showing the relationship betwe
 <details>
 <summary>Network for corpus including headlines from category Arbeitsmarkt </summary>.
 
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/co-occMatrix.JPG" width="750">	
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkArbeitsmarkt.JPG" width="900">	
 </details>	
 	
+<details>
+<summary>Network for corpus including headlines from category Bildung </summary>.
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkBildung.JPG" width="900">	
+</details>
+
+<details>
+<summary>Network for corpus including headlines from category Digitalisierung </summary>.
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkDig.JPG" width="900">	
+</details>	
+
+<details>
+<summary>Network for corpus including headlines from category Coronavirus </summary>.
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkCovid.JPG" width="900">	
+</details>
+
+<details>
+<summary>Network for corpus including headlines from category Klimawandel </summary>.
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkKlima.JPG" width="900">	
+</details>
+
+<details>
+<summary>Network for corpus including headlines from category Migration </summary>.
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkMigration.JPG" width="900">	
+</details>
 	
+<details>
+<summary>Network for corpus including headlines from category Rassismus </summary>.
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkRassismus.JPG" width="900">	
+</details>
+	
+<details>
+<summary>Network for corpus including headlines from category Ukraine </summary>.
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkUkraine.JPG" width="900">	
+</details>	
 
 	
 ### Evaluation - Word Similarity Task
