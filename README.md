@@ -462,12 +462,23 @@ headlines_fcm <- headlines_corpus %>%
 <details>
 <summary>Feature co-occurrence matrix </summary>.
 
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/co-occMatrix.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/co-occMatrix.JPG" width="750">
 	
 We can see that we have got a 179,604 x 179,604 matrix and that, for example, feature *spd* appears 363 times within 3 words of the feature *union*. However, the word *afd* never appears within 3 words of the word *koalitionsverhandlungen* in this corpus. 
 </details>	
 
+Given this representations, we created some plots showing the relationship between the top features in our corpus (edges show co-occurrences of features):
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkAll.JPG" width="750">
 	
+<details>
+<summary>Network for corpus including headlines from category Arbeitsmarkt </summary>.
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/co-occMatrix.JPG" width="750">	
+</details>	
+	
+	
+
 	
 ### Evaluation - Word Similarity Task
 This task is based on the idea that the similarity between two words can be measured with the cosine similarity of their word embeddings. A list of word pairs along with their similarity rating, which human annotators judge, is used for this task, and the following gold standards are used:
