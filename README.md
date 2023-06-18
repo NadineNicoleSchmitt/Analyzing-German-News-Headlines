@@ -359,8 +359,8 @@ When grouping by outlets, we can see that **bild.de** and **Spiegel** have lower
 <details>
 <summary>Plots grouped by outlets split for each category  </summary>.
  
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/PlotForEachCategory1.JPG" width="750">
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/PlotForEachCategory2.JPG" width="750">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/PlotForEachCategory1.JPG" width="900">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/PlotForEachCategory2.JPG" width="900">
 </details>	
 
 Altogether and also incorporating the results of the Naive Bayes classification, we can see no clear trend that the sentiment of the news headlines has become more negative in the last decade. It seems that it is completely the other way around - especially in periods of an acute crisis (i.e., there are more headlines with negative content), it seems that the fraction of negative headlines in terms of the sentiment (i.e., how the negative content is expressed) is lower than in \textit{good} times. Hence we make the following hypothesis: when there are no/less \textit{bad} news in terms of the content, they have to be formulated with a more negative sentiment touch in order to reach more attention by the readers. This hypothesis should be checked in further research. Other ideas and limitations are represented in the next section. 
