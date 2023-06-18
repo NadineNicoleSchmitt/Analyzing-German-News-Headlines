@@ -510,7 +510,7 @@ Given this representations, we created some plots showing the relationship betwe
 <details>
 <summary>Network for corpus including headlines from category Rassismus </summary>.
 
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/NetworkRassismus.JPG" width="900">	
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/Rassismus.JPG" width="900">	
 </details>
 	
 <details>
