@@ -620,6 +620,9 @@ The following plots illustrate the topic proportions of topic 1 for each level o
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectOutlet.JPG" width="600">
 	
 We can see that mandatory vaccination was most discussed by the outlets **Welt** & **FAZ**, while **SZ** & **Wirtschaftswoche** focused less on it.
+In the plot above, we held the two other covariates (sentiment, year) at their sample median. In the following we still held ``year`` at its sample median, but held the ``sentiment`` at either ``negative`` or ``NotNegative``:
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectOutletNegative.JPG" width="600">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectOutletNotNegative.JPG" width="600">
 	
 ##### Is the topic mandatory vaccination more common among headlines with ``negative`` sentiment?
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectSentiment.JPG" width="600"> 
