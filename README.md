@@ -444,6 +444,10 @@ see full [Classification_NaiveBayesResults.pdf](https://github.com/NadineNicoleS
 
 ### Results Classification Naive Bayes
 
+### Limitations Classification Naive Bayes
+- We used bag-of-words as input for our classifier; in a further analysis we should rather use word embeddings as input, which can lead to large performance gains because word embeddings allow for *automatic generalization* (e.g., we have a training corpus and learn that *horrible* is a good predictor for ``negative`` headlines, but we never observe the word *awful* in our training corpus; word embeddings would allow us to automatically generalise that because *horrible* is a good predictor, also *awful* have to be a good predictor because word embeddings tell us that these 2 words are used similary)
+- Going deeper, we should not only use Naive Bayes as classifier (to overcome for example the independence assumption (no interaction between words)), but classify our headlines with different classifiers (such as SVM, Random Forest, Neural Netwoks CNN, etc.) and use the one for which we get the best performance scores
+
 
 
 ***
