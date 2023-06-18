@@ -437,9 +437,39 @@ see full [Classification_NaiveBayesResults.pdf](https://github.com/NadineNicoleS
 
 ***
 ## Word Embeddings
+In order to expand the dictionaries in the dictionary analysis (see [Dictionary Expansion with Word Embeddings](#dictionary-expansion-with-word-embeddings)), we downloaded existing German word embeddings (pre-trained word embeddings) and trained them by ourselves on our corpus. 
 
+### Co-occurence vector
+First of all, we counted the occurences of any term within a fixed window (3) of any other term in our corpus and stored them in a **feature-cooccurence matrix** (= a matrix that reports how often a term appears with each other term):
+
+```markdown
+#create corpus
+headlines_corpus <- corpus(headlines,
+                           text_field = "title")
+
+#create fcm
+headlines_fcm <- headlines_corpus %>%
+  tokens() %>%
+  tokens_tolower() %>%
+  tokens_remove(stopwords("de")) %>%
+  tokens(remove_punct = TRUE) %>%
+  tokens(remove_numbers = TRUE) %>%
+  fcm(context ="window", #fcm instead of dfm
+      window =3,
+      tri = FALSE)
+```
+
+<details>
+<summary>Feature co-occurrence matrix </summary>.
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/co-occMatrix.JPG" width="600">
+We can see that we have got a 179,604 x 179,604 matrix and that, for example, feature *spd* appears within 3 words of the feature *union* 363 times. However, the word *afd* never occurs appears within 3 words of the word *koalitionsverhandlungen* in this corpus. 
+</details>	
+
+	
+	
 ### Evaluation - Word Similarity Task
-This task is based on the idea that the similarity between two words can be measured with the cosine similarity of their word embeddings. A list of word pairs along with their similarity rating, which is judged by human annotators, is used by this task and the following goldstandards are used:
+This task is based on the idea that the similarity between two words can be measured with the cosine similarity of their word embeddings. A list of word pairs along with their similarity rating, which human annotators judge, is used for this task, and the following gold standards are used:
 
 - Similarity353 
 - RG65 
