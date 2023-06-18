@@ -586,10 +586,52 @@ similarities <- function(target_word, n, embedding){
 }
 ```
 </details>
+
 In the following the 10 most similar words of some sample words are represented, which makes completely sense:
 
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/Similarities.JPG" width="750">
-https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/Similarities.JPG
+
+### Analogy
+Word embeddings can also capture **analogies** (= linguistic expressions which describe processes of transferring information from one subject to another) via their geometry. Were therefore also calculated some analogies:
+	
+<details>
+<summary>R code to calculate analogies </summary>.
+
+```markdown
+#function to calculate analogies
+#a is to b as c is to....
+#target <- king -men + women
+#a: men
+#b: women
+#c: king
+analogies <- function(a, b, c, n, embedding){
+  
+  # Extract vectors for each of the three words in analogy task
+  a_vec <- embedding[which(rownames(embedding) == a),]
+  b_vec <- embedding[which(rownames(embedding) == b),]
+  c_vec <- embedding[which(rownames(embedding) == c),]
+  
+  # Generate analogy vector (vector(c) - vector(a) + vector(b))
+  target <- c_vec - a_vec + b_vec
+  
+  # Calculate cosine similarity between anaology vector and all other vectors
+  target_sim <- sim2(embedding, matrix(target, nrow = 1))
+  
+  # Report nearest neighbours of analogy vector
+  sort(target_sim[,1], decreasing = T)[1:n]
+  
+}
+```
+</details>
+
+In the following some samples for the analogy task are given:
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/Analogy.JPG" width="750">
+
+>__Note__: Above we chose some samples for which we got good results; however there are many words for which the task not performs well:
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/WordEmbeddings/AnalogiesWrong.JPG" width="750">
+
+
 	
 ### Evaluation - Word Similarity Task
 This task is based on the idea that the similarity between two words can be measured with the cosine similarity of their word embeddings. A list of word pairs along with their similarity rating, which human annotators judge, is used for this task, and the following gold standards are used:
