@@ -661,7 +661,7 @@ In the following table, the performance scores for our self-trained and pre-trai
 
 We can see that the pre-trained embeddings outperform our self-trained embeddings in all 3 gold standards. However, while word similarity benchmarks are widely used for intrinsic embedding evaluation, they are biased in the sense that good intrinsic evaluation scores do not imply useful embeddings for downstream tasks, as shown by [Faruqui, M. et al., 2016](https://arxiv.org/abs/1605.02276). Therefore we used both for our [Dictionary Expansion with Word Embeddings](#dictionary-expansion-with-word-embeddings) (but we saw there as well that the pre-trained embeddings performed better).
 
-	#### Compare two Pearson correlations
+#### Compare two Pearson correlations
 In order to compare two Pearson correlations, the [cocor package in R](https://cran.r-project.org/web/packages/cocor/cocor.pdf) is used. It is done for a _dependent overlapping group_ by using the following function in R:
 ```markdown
 cocor.dep.groups.overlap(r.jk, r.jh, r.kh, n, alternative = "two.sided", test = "all", alpha = 0.05, conf.level = 0.95, null.value = 0, data.name = NULL, var.labels = NULL, return.htest = FALSE)
