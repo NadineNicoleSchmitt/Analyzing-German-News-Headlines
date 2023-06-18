@@ -623,6 +623,8 @@ We can see that mandatory vaccination was most discussed by the outlets **Welt**
 In the plot above, we held the two other covariates (sentiment, year) at their sample median. In the following we still held ``year`` at its sample median, but held the ``sentiment`` at either ``negative`` or ``NotNegative``:
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectOutletNegative.JPG" width="600">
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectOutletNotNegative.JPG" width="600">
+
+We can see, for example, that outlet **ZeitOnline** discussed topic 1 with more ``negative`` headlines (~0.06) than ``NotNegative`` classified headlines (~0.05). This is true for all outlets; hence there is no outlet who described topic 1 with more ``NotNegative`` classified headlines.
 	
 ##### Is the topic mandatory vaccination more common among headlines with ``negative`` sentiment?
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/EffectSentiment.JPG" width="600"> 
