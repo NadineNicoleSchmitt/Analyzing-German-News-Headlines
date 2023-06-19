@@ -893,9 +893,9 @@ While the first plot shows the topic proportions of the 4 topics for each level 
 	
 We can see, that topics 11 & 19 are more prevalent among ``NotNegative`` classified headlines, while topics 1 & 18 are more prevalent among ``negative`` classified headlines. This is fascinating because especially topic 19 (vaccines) were highly controversal discussed among Germans (especially in 2023 when more and more vaccination damages are explored) and the question arises, if the media covers the political opinion/ discussion of the public or if they report more positively in terms of vaccines to get more people thinking positivly about vaccines.
 
-###Topics most prevalent in years before the Covid-19 crisis
+### Topics most prevalent in years before the Covid-19 crisis
 
-It is very interesting to see which topic was mainly discussed in the years before the outbreak of the Covid-19 pandemic. To see this, we had again a look on all topic proportions and how they differ for each level of the covariate ``year``. We saw, that for example, topic 5 (USA) was more prevalent in the years before the crisis - this is in line with the history (in 2012, there were some cases about MERS (Middle East Respiratory Syndrome) in the US)):
+It is very interesting to see which topic was mainly discussed in the years before the outbreak of the Covid-19 pandemic. To see this, we had again a look on all topic proportions and how they differ for each level of the covariate ``year``. We saw, that for example, topic 5 (USA) was more prevalent in the years before the crisis - this is in line with the history (in 2012, there were some cases about MERS (Middle East Respiratory Syndrome) in the US):
 
 <details>
 
@@ -903,7 +903,7 @@ It is very interesting to see which topic was mainly discussed in the years befo
 
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/Topic5Year.JPG" width="750">
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/Topic5Outlet.JPG" width="750">
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/Topic5Sentiment.JPG" width="750">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/Topic5Sentiment.JPG" width="650">
 </details>
 
 ### Limitations STM
