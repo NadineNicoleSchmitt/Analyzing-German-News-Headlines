@@ -392,7 +392,7 @@ When having a deeper look into the category **Coronavirus** in the years between
 
 ***
 ## Classification with Naive Bayes
-We have got some interesting results from our dictionary approach; however, we extend the dictionary analysis with a **supervised learning** approach (which can be conceptualized as a generalization of dictionary methods), in which the features associated with a category (here ``negative``) are learned directly from the data (rather than pre-specified by the researcher).
+We have got some interesting results from our dictionary approach; however, we extend the dictionary analysis with a **supervised learning** approach (which can be conceptualized as a generalization of dictionary methods), in which the features associated with a category (here ``negative``) are learned directly from the data (rather than pre-specified by the researcher). We used the Naive Bayes classifier to classify each headline in one of these 2 categories: ``Negative`` or ``NotNegative``.
 	
 In order to do this, we first performed a **feature selection** (choosing the *best* dfm) with k fold cross validation on our labeled data, chose afterward the *best model* and used this for the classification/ prediction for our unlabeled headlines. We then did again some face validating checks to evaluate aour approach and try to get some insights into our research question.	
 	
@@ -452,7 +452,7 @@ x <- colMeans(bind_rows(model))
 	
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/PerformanceScoresNaiveBayes.JPG" width="600">
 
-
+Model 1 performs well in terms of Sensitivity (nearly three-fourth of all ``negative`` headlines are classified correctly), but the Specificity is with about 55% quite low (only a little bit more than the half of all ``NotNegative``headlines were classified correctly; hence there is a high FALSE Positive rate). Because of the fact that we do not want to *miss* these ``NotNegative`` headlines (we do not want that we find answers to our research question in which we, for example, say that the proportion of ``negative`` headlines have increased, but the ``negative`` headlines are in reality ``NotNegative``) we chose for our further analysis Model 6. Model 6 has a lower Sensitivity than Model 1, but 
 
 
 ### Results Classification Naive Bayes
