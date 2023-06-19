@@ -394,14 +394,14 @@ When having a deeper look into the category **Coronavirus** in the years between
 ## Classification with Naive Bayes
 We have got some interesting results from our dictionary approach; however, we extend the dictionary analysis with a **supervised learning** approach (which can be conceptualized as a generalization of dictionary methods), in which the features associated with a category (here ``negative``) are learned directly from the data (rather than pre-specified by the researcher).
 	
-In order to do this we 
-
-	
+In order to do this, we first performed a **feature selection** (choosing the *best* dfm) with k fold cross validation on our labeled data, chose afterward the *best model* and used this for the classification/ prediction for our unlabeled headlines. We then did again some face validating checks to evaluate aour approach and try to get some insights into our research question.	
 	
 ### Feature Selection with k fold cross validation
+In order to find the *best* dfm, we created 6 dfm with different features as shown in the following table:
 
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/FeatureSelection.JPG" width="600">
 
+Afterward, for each of this 6 dfms, we performed a 10 fold cross validation on our labeled headlines (11,109 observations). We therefore split up the labeled headlines into 10 folds, use 9 folds for training and the remaining one for testing to calculate performance scores. We did this 10 times; hence that every of the 10 folds were a testing fold in one of the process. Afterword we calculated the average over this 10 resulted performance scores, which are shown in the following:
 	
 <details>
 <summary>R code k fold cross validation  </summary>.
@@ -452,11 +452,14 @@ x <- colMeans(bind_rows(model))
 	
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/PerformanceScoresNaiveBayes.JPG" width="600">
 
-see full [Classification_NaiveBayesResults.pdf](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/ClassificationNaiveBayesResults.pdf)
+
 
 
 ### Results Classification Naive Bayes
 
+see full [Classification_NaiveBayesResults.pdf](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/ClassificationNaiveBayesResults.pdf)	
+	
+	
 ### Limitations Classification Naive Bayes
 - We only included 6 different dfms in our feature selection and we could do this with more dfms (e.g., trigram, trimming)
 - We used bag-of-words as input for our classifier; in a further analysis we should rather use word embeddings as input, which can lead to large performance gains because word embeddings allow for *automatic generalization* (e.g., we have a training corpus and learn that *horrible* is a good predictor for ``negative`` headlines, but we never observe the word *awful* in our training corpus; word embeddings would allow us to automatically generalise that because *horrible* is a good predictor, also *awful* have to be a good predictor because word embeddings tell us that these 2 words are used similary)
