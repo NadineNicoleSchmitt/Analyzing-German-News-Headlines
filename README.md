@@ -457,14 +457,13 @@ Model 1 performs well in terms of Sensitivity (nearly three-fourth of all ``nega
 ### Training and Predicting
 We used the *best* dfm (in which we used bigrams and removed stopwords, punctuations & numbers) to train our Naive Bayes classifier. We used the whole 11,109 labeled observations for the training and used the classifier to predict a category for the remaining unlabeled headlines.
 
->__Note__: We used the whole labeled dataset for training (and did no split into training and testing set again) since we evaluated the test error in [Feature Selection with k-fold-cross validation](#feature-selection-with-k-fold-cross validation) and wanted to have as much observations as possible for our training 
+>__Note__: We used the whole labeled dataset for training (and did no split into training and testing set again) since we evaluated the test error in [Feature Selection with k-fold-cross validation](#feature-selection-with-k-fold-cross-validation) and wanted to have as much observations as possible for our training 
 
 When evaluating our training process again on the training set, we get the following high performance scores:
 
-|:------------------:|:------------------------------:|
-| Accuracy           | 19,750                         | 
-| Sensitivity        | 2,334 *(original: 2,858)*      | 
-| specificity	     | 19,750 + ${\color{red} 233}$   | 
+| Accuracy           | 0.992                          | 
+| Sensitivity        | 0.995                          | 
+| specificity	     | 0.988                          | 
 
 >__Note__: These scores only include training errors and not testing errors; hence the overall performance is not that high
 
