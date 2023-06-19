@@ -493,6 +493,38 @@ In order to evaluate if our classifier works correctly, we also did some face va
 
 We calculated the proportion of ``negative`` and ``NotNegative`` headlines for each year grouped by category (see [Classification_NaiveBayesResults.pdf](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/ClassificationNaiveBayesResults.pdf)).
 
+The following figure shows the **proportion of negative headlines** over time (year) grouped by category:
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/NaiveBayesGroupedCategory.JPG" width="750">
+	
+There are more ``negative`` headlines than ``NotNegative`` headlines in all categories in each year (proportion of ``negative`` headlines is over 50%) and the proportion is constantly high (we can see now trend that the fraction of ``negative`` headlines have increased in the last decade. Category **Rassismus**, **Migration** and **Ukraine** have the highest proportions over the whole period, while category **Digitalisierung** has the lowest proportions. Again we see the same as in see [Results Dictionary](#results-dictionary)): There is the biggest variation in the proportion for the category **Coronavirus**. Although the crisis started in 2020, we can see relatively high scores between 2013-2016. There was a decrease in the proportions in all categories during the first year of the Covid-19 crisis (including the **Coronavirus** category). Then again, there has been a slight increase in all categories except **Ukraine** since 2021 to the level of the previous years. 
+	
+When grouping by outlets, we can see that **bild.de** and **Spiegel** have higher proportions of ``negative`` classified headlines than **FAZ** and **Wirtschaftswoche** & **Handelsblatt**, which is not in line with our [Results Dictionary](#results-dictionary) (see dicussion about this there).
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/NaiveBayesGroupedOutlet.JPG" width="750">
+
+<details>
+<summary>Plots grouped by outlets split for each category  </summary>.
+ 
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/NaiveBayesGroupedOutlet1.JPG" width="900">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/NaiveBayesGroupedOutlet2.JPG">
+</details>
+	
+When looking at the relationship between the mean dictionary score and the length of the headlines (NToken), we can clearly see the trend that longer headlines have lower dictionary scores (as described in [Face Validating Dictionary](#face-validating-dictionary)):
+	
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/ScoreVsLength.JPG" width="1000">
+
+>__Note__: each point in the graph illustrates the mean dictionary score per month for all categories grouped by outlets (indicated by color)
+
+#### Results Dictionary: Relation to known events
+
+In the following graph, the mean dictionary score for every month in category **Migration** from 2014 to 2023 (not split in outlets) is given. We can see that the mean dictionary scores were - as expected - higher during the migration crisis in Europe in summer/ autumn 2015. However, we see something unexpected in the last years: Although we would have expected that during the first months of the Covid-19 pandemic the mean dictionaries scores in category **Migration** should have been lower because this topic was not really prevalent during this time period (no migrants because of border closures). Furthermore, the mean dictionary scores in the first months after the start of the Ukraine War, in which many migrants from Ukraine came to Germany, were relatively low and we would have expected higher scores. Finally, there is an acute migration crisis in the first half of 2023; but the mean dictionary scores are not at the same high level as in 2015:
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/DetailMigration.JPG" width="1000">
+	
+When having a deeper look into the category **Coronavirus** in the years between 2020 and 2023, we can see something similar. There was a decrease in the mean dictionary score in the first year of the pandemic, although we would have expected that it would have been the other way around. It is very fascinating to see that although the crisis is over in 2023 and the German society is facing other crises (Ukraine War, Inflation, Migration, Climate) and is not threatened by the virus anymore, the mean dictionary scores are at the same high level as during the start of the Covid-19 pandemic. This might be due to the fact that one now has a relatively negative/ critical review of the policy during the pandemic:
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/DetailCovid.JPG" width="1000">  
 
 	
 	
