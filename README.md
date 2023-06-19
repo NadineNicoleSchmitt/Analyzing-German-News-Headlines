@@ -892,7 +892,20 @@ Estimating the difference in topic usage for these 4 topics between ``negative``
 While the first plot shows the topic proportions of the 4 topics for each level of covariate (``negative``/ ``NotNegative``), the second plot illustrates the estimated difference in topic usage. For example,  topic 19 has a topic proportion of 0.1 among ``negative`` classified headlines and a topic proprtions of 0.035 among ``NotNegative`` classified headlines; hence the difference in topic usage is 0.035 - 0.1 = -0.065. 
 	
 We can see, that topics 11 & 19 are more prevalent among ``NotNegative`` classified headlines, while topics 1 & 18 are more prevalent among ``negative`` classified headlines. This is fascinating because especially topic 19 (vaccines) were highly controversal discussed among Germans (especially in 2023 when more and more vaccination damages are explored) and the question arises, if the media covers the political opinion/ discussion of the public or if they report more positively in terms of vaccines to get more people thinking positivly about vaccines.
-	
+
+###Topics most prevalent in years before the Covid-19 crisis
+
+It is very interesting to see which topic was mainly discussed in the years before the outbreak of the Covid-19 pandemic. To see this, we had again a look on all topic proportions and how they differ for each level of the covariate ``year``. We saw, that for example, topic 5 (USA) was more prevalent in the years before the crisis - this is in line with the history (in 2012, there were some cases about MERS (Middle East Respiratory Syndrome) in the US)):
+
+<details>
+
+<summary>R Plots estimate effects topic 5 </summary>
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/Topic5Year.JPG" width="750">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/Topic5Outlet.JPG" width="750">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/TopicModel_STM/Topic5Sentiment.JPG" width="750">
+</details>
+
 ### Limitations STM
 - We applied STM only on category **Coronavirus** and it would be interesting to see this analysis also for the other categories/ we only inspected some topics; hence we should further investigate other topics
 - in order to find an answer to the upcoming question decribed in [More topics](#more-topics), we could investigate if there is a correlation between the ``sentiment`` of headlines and the public opinion reflected in polls
