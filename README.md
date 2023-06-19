@@ -469,7 +469,25 @@ When evaluating our training process again on the training set, we get the follo
 
 >__Note__: These scores only include training errors and not testing errors; hence the overall performance is not that high
 
+We classified 373,623 of the not labeled headlines as ``negative`` and 163,897 as ``NotNegative``; hence the proportion of ``ngeative`` headlines is higher (69.5%). 
+    
 ### Face Validating Naive Bayes
+
+In order to evaluate if our classifier works correctly, we also did some face validating by looking at the headlines with the highest probability to fall into one category and see that it makes sense:
+
+<details>
+<summary>Top 4 negative headlines  </summary>.
+ 
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/TopNegativeHeadlines.JPG" width="900">
+</details>
+	
+<details>
+<summary>Top 4 NotNegative headlines  </summary>.
+ 
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/TopNotNegativeHeadlines.JPG" width="900">
+</details>
+
+
 ### Results Classification Naive Bayes
 
 see full [Classification_NaiveBayesResults.pdf](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/ClassificationNaiveBayesResults.pdf)	
