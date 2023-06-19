@@ -465,11 +465,12 @@ When evaluating our training process again on the training set, we get the follo
 |:------------------:|:------------------------------:|
 | Accuracy           | 0.992                          | 
 | Sensitivity        | 0.995                          | 
-| specificity	     | 0.988                          | 
+| Specificity	     | 0.988                          | 
 
 >__Note__: These scores only include training errors and not testing errors; hence the overall performance is not that high
 
-We classified 373,623 of the not labeled headlines as ``negative`` and 163,897 as ``NotNegative``; hence the proportion of ``ngeative`` headlines is higher (69.5%). 
+We classified 373,623 of the not labeled headlines as ``negative`` and 163,897 as ``NotNegative``; hence the proportion of ``negative`` headlines is higher (69.5%). 
+This [file](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/headlines_withNaiveBayesScore.Rdata) contains the headlines with its classified category.
     
 ### Face Validating Naive Bayes
 
@@ -490,7 +491,9 @@ In order to evaluate if our classifier works correctly, we also did some face va
 
 ### Results Classification Naive Bayes
 
-see full [Classification_NaiveBayesResults.pdf](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/ClassificationNaiveBayesResults.pdf)	
+We calculated the proportion of ``negative`` and ``NotNegative`` headlines for each year grouped by category (see [Classification_NaiveBayesResults.pdf](https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/ClassificationNaiveBayesResults.pdf)).
+
+
 	
 	
 ### Limitations Classification Naive Bayes
