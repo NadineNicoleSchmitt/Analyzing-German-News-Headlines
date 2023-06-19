@@ -388,7 +388,7 @@ When having a deeper look into the category **Coronavirus** in the years between
 -  Moreover, as seen in [Face Validating Dictionary](#face-validating-dictionary), we should further investigate if headlines containing the same amount of ``negative`` words but are longer (i.e., also containing some ``neutral/ positive`` words) should be considered less ``negative``. 
 - Furthermore, as we only get slightly better results when expanding our dictionary with word embeddings, we should use in further research **self-trained word embeddings** on our specific context (but rather than only use the headlines, we should train them on large corpora, i.e., the full news articles).
 - We only expanded the dictionaries for the ``negative`` key and not for the ``negative positive`` key. This could be done as well in future research.
-- Finally, we represent deeper insights only into 2 categories (see [Results Dictionary: Relation to known events](#results-dictionary:-relation-to-known-events)) and we should provide them for other categories as well
+- Finally, we represent deeper insights only into 2 categories (see [Results Dictionary: Relation to known events](#results-dictionary)) and we should provide them for other categories as well
 
 ***
 ## Classification with Naive Bayes
