@@ -378,10 +378,8 @@ In the following graph, the mean dictionary score for every month in category **
 	
 When having a deeper look into the category **Coronavirus** in the years between 2020 and 2023, we can see something similar. There was a decrease in the mean dictionary score in the first year of the pandemic, although we would have expected that it would have been the other way around. It is very fascinating to see that although the crisis is over in 2023 and the German society is facing other crises (Ukraine War, Inflation, Migration, Climate) and is not threatened by the virus anymore, the mean dictionary scores are at the same high level as during the start of the Covid-19 pandemic. This might be due to the fact that one now has a relatively negative/ critical review of the policy during the pandemic:
 
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/DetailCovid.JPG" width="1000">  
   
-  
-
-
 ### Limitations Dictionary
 - We just used two existing dictionaries (available directly in quanteda). In a future analysis **other dictionaries**, such as the [NRC Word-Emotion Association Lexicon](https://rdrr.io/github/quanteda/quanteda.sentiment/man/data\_dictionary\_NRC.html) should be applied to see if we can reach better performance statistics. 
 - Additionally, this dictionary could expand the analysis to ``negative`` sentiment and provide further insights into **sentiments** such as ``fear`` or ``anger`` (e.g., do the headlines during the Covid-19 pandemic include more words with the ``fear`` sentiment?).
