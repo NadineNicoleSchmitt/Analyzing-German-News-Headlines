@@ -452,7 +452,10 @@ x <- colMeans(bind_rows(model))
 	
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/PerformanceScoresNaiveBayes.JPG" width="600">
 
-Model 1 performs well in terms of Sensitivity (nearly three-fourth of all ``negative`` headlines are classified correctly), but the Specificity is with about 55% quite low (only a little bit more than the half of all ``NotNegative``headlines were classified correctly; hence there is a high FALSE Positive rate). Because of the fact that we do not want to *miss* these ``NotNegative`` headlines (we do not want that we find answers to our research question in which we, for example, say that the proportion of ``negative`` headlines have increased, but the ``negative`` headlines are in reality ``NotNegative``) we chose for our further analysis Model 6. Model 6 has a lower Sensitivity than Model 1, but 
+Model 1 performs well in terms of Sensitivity (nearly three-fourth of all ``negative`` headlines are classified correctly), but the Specificity is with about 55% quite low (only a little bit more than the half of all ``NotNegative``headlines were classified correctly; hence there is a high FALSE Positive rate). Because of the fact that we do not want to *miss* these ``NotNegative`` headlines (we do not want that we find answers to our research question in which we, for example, say that the proportion of ``negative`` headlines have increased, but the ``negative`` headlines are in reality ``NotNegative``) we chose for our further analysis Model 6. Model 6 has a lower Sensitivity than Model 1 (only about 63% of the ``Negative`` headlines are classified correctly), but a much higher Specificity.
+
+### Training and Predicting
+We used the 
 
 
 ### Results Classification Naive Bayes
