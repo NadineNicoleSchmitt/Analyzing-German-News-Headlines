@@ -461,6 +461,7 @@ We used the *best* dfm (in which we used bigrams and removed stopwords, punctuat
 
 When evaluating our training process again on the training set, we get the following high performance scores:
 
+| **Measure**     | **Training Score**             |
 | Accuracy           | 0.992                          | 
 | Sensitivity        | 0.995                          | 
 | specificity	     | 0.988                          | 
