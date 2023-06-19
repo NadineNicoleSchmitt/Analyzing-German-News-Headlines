@@ -510,21 +510,17 @@ When grouping by outlets, we can see that **bild.de** and **Spiegel** have highe
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/NaiveBayesGroupedOutlet2.JPG">
 </details>
 	
-When looking at the relationship between the mean dictionary score and the length of the headlines (NToken), we can clearly see the trend that longer headlines have lower dictionary scores (as described in [Face Validating Dictionary](#face-validating-dictionary)):
+When looking at the relationship between the proportions and the length of the headlines (NToken), we cannot see (unlike our [Results Dictionary](#results-dictionary)) that there are more ``negative`` headlines (proportion is higher) when they are longer (it is more the other way around - the boulevard **bild.de** has the longest headlines and the highest proportions):
 	
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/ScoreVsLength.JPG" width="1000">
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/FractionVsLength.JPG" width="1000">
 
->__Note__: each point in the graph illustrates the mean dictionary score per month for all categories grouped by outlets (indicated by color)
+>__Note__: each point in the graph illustrates the proportion of ``negative`` headlines per month for all categories grouped by outlets (indicated by color)
 
 #### Results Dictionary: Relation to known events
 
-In the following graph, the mean dictionary score for every month in category **Migration** from 2014 to 2023 (not split in outlets) is given. We can see that the mean dictionary scores were - as expected - higher during the migration crisis in Europe in summer/ autumn 2015. However, we see something unexpected in the last years: Although we would have expected that during the first months of the Covid-19 pandemic the mean dictionaries scores in category **Migration** should have been lower because this topic was not really prevalent during this time period (no migrants because of border closures). Furthermore, the mean dictionary scores in the first months after the start of the Ukraine War, in which many migrants from Ukraine came to Germany, were relatively low and we would have expected higher scores. Finally, there is an acute migration crisis in the first half of 2023; but the mean dictionary scores are not at the same high level as in 2015:
+When having a deeper look into the category **Coronavirus** in the years between 2020 and 2023, we can see the same trend as in [Results Dictionary](#results-dictionary). There was a decrease in the fraction of ``negative`` headlines in the first year of the pandemic, although we would have expected that it would have been the other way around. It is very fascinating to see that although the crisis is over in 2023 and the German society is facing other crises (Ukraine War, Inflation, Migration, Climate) and is not threatened by the virus anymore, the proportions of ``negative`` headlines are at the same high level as during the start of the Covid-19 pandemic. This might be due to the fact that one now has a relatively negative/ critical review of the policy during the pandemic:
 
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/DetailMigration.JPG" width="1000">
-	
-When having a deeper look into the category **Coronavirus** in the years between 2020 and 2023, we can see something similar. There was a decrease in the mean dictionary score in the first year of the pandemic, although we would have expected that it would have been the other way around. It is very fascinating to see that although the crisis is over in 2023 and the German society is facing other crises (Ukraine War, Inflation, Migration, Climate) and is not threatened by the virus anymore, the mean dictionary scores are at the same high level as during the start of the Covid-19 pandemic. This might be due to the fact that one now has a relatively negative/ critical review of the policy during the pandemic:
-
-<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/DetailCovid.JPG" width="1000">  
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/DeeperInsightCovid.JPG" width="1000">  
 
 	
 	
