@@ -370,7 +370,12 @@ When looking at the relationship between the mean dictionary score and the lengt
 
 >__Note__: each point in the graph illustrates the mean dictionary score per month for all categories grouped by outlets (indicated by color)
 
-Altogether and also incorporating the results of the Naive Bayes classification, we can see no clear trend that the sentiment of the news headlines has become more negative in the last decade. It seems that it is completely the other way around - especially in periods of an acute crisis (i.e., there are more headlines with negative content), it seems that the fraction of negative headlines in terms of the sentiment (i.e., how the negative content is expressed) is lower than in \textit{good} times. Hence we make the following hypothesis: when there are no/less \textit{bad} news in terms of the content, they have to be formulated with a more negative sentiment touch in order to reach more attention by the readers. This hypothesis should be checked in further research. Other ideas and limitations are represented in the next section. 
+#### Results Dictionary: Relation to known events
+
+In the following graph, the mean dictionary score for every month in category **Migration** from 2014 to 2023 (not split in outlets) is given. We can see that the mean dictionary scores were - as expected - higher during the migration crisis in Europe in summer/ autumn 2015. However, we see something unexpected in the last years: Although we would have expected that during the first months of the Covid-19 pandemic the mean dictionaries scores in category **Migration** should have been lower because this topic was not really prevalent during this time period (no migrants because of border closures). Furthermore, the mean dictionary scores in the first months after the start of the Ukraine War, in which many migrants from Ukraine came to Germany, were relatively low and we would have expected higher scores. Finally, there is an acute migration crisis in the first half of 2023; but the mean dictionary scores are not at the same high level as in 2015:
+
+<img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/DetailMigration.JPG" width="1000">
+	
 
   
   
@@ -1009,6 +1014,11 @@ It seems that the models are essentially discovering that the main source of var
 	
 ***
 ## Conclusion
+
+	
+Altogether and also incorporating the results of the Naive Bayes classification, we can see no clear trend that the sentiment of the news headlines has become more negative in the last decade. It seems that it is completely the other way around - especially in periods of an acute crisis (i.e., there are more headlines with negative content), it seems that the fraction of negative headlines in terms of the sentiment (i.e., how the negative content is expressed) is lower than in \textit{good} times. Hence we make the following hypothesis: when there are no/less \textit{bad} news in terms of the content, they have to be formulated with a more negative sentiment touch in order to reach more attention by the readers. This hypothesis should be checked in further research. Other ideas and limitations are represented in the next section. 
+	
+	
 ***
 ## Further Limitations
 - We collected news headlines from eight different **categories** and 8 different news **outlets**, and it would be interesting to see if we get different results when including other categories (such as sports or finance) and more/ other outlets. 
