@@ -376,19 +376,21 @@ In the following graph, the mean dictionary score for every month in category **
 
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Dictionary/DetailMigration.JPG" width="1000">
 	
+When having a deeper look into the category **Coronavirus** in the years between 2020 and 2023, we can see something similar. There was a decrease in the mean dictionary score in the first year of the pandemic, although we would have expected that it would have been the other way around. It is very fascinating to see that although the crisis is over in 2023 and the German society is facing other crises (Ukraine War, Inflation, Migration, Climate) and is not threatened by the virus anymore, the mean dictionary scores are at the same high level as during the start of the Covid-19 pandemic. This might be due to the fact that one now has a relatively negative/ critical review of the policy during the pandemic:
 
   
   
 
-  
+
 ### Limitations Dictionary
 - We just used two existing dictionaries (available directly in quanteda). In a future analysis **other dictionaries**, such as the [NRC Word-Emotion Association Lexicon](https://rdrr.io/github/quanteda/quanteda.sentiment/man/data\_dictionary\_NRC.html) should be applied to see if we can reach better performance statistics. 
 - Additionally, this dictionary could expand the analysis to ``negative`` sentiment and provide further insights into **sentiments** such as ``fear`` or ``anger`` (e.g., do the headlines during the Covid-19 pandemic include more words with the ``fear`` sentiment?).
--  In addition,, we only used one dfm and made no feature selection, i.e., it would be interesting to see if we get better/different results when we use **other features**, such as removing stopwords. 
+-  In addition, we only used one dfm and made no feature selection, i.e., it would be interesting to see if we get better/different results when we use **other features**, such as removing stopwords. 
 -  Besides, we did not apply **weighted vector representations** (only raw word counts instead of tf-idf weighting) and also used no **weighted scores** in the dictionaries. It would be interesting to see if we get different results when using **tf-idf weighting** and using weighted dictionaries/using the cosine similarity scores from our dictionary expansion with word embeddings. 
 -  Moreover, as seen in [Face Validating Dictionary](#face-validating-dictionary), we should further investigate if headlines containing the same amount of ``negative`` words but are longer (i.e., also containing some ``neutral/ positive`` words) should be considered less ``negative``. 
-- Furthermore, as we only get slightly better results when expanding our dictionary with word embeddings, we should use in further research **self-trained word embeddings** on our specific context (but rather than only use the headlines we should train them on large corpora, i.e., the full news articles).
-- Finally, we only expanded the dictionaries for the ``negative`` key and not for the ``negative positive`` key. This could be done as well in future research. 
+- Furthermore, as we only get slightly better results when expanding our dictionary with word embeddings, we should use in further research **self-trained word embeddings** on our specific context (but rather than only use the headlines, we should train them on large corpora, i.e., the full news articles).
+- We only expanded the dictionaries for the ``negative`` key and not for the ``negative positive`` key. This could be done as well in future research.
+- Finally, we represent deeper insights only into 2 categories (see [Results Dictionary: Relation to known events](#results-dictionary:-relation-to-known-events)) and we should provide them for other categories as well
 
 ***
 ## Classification with Naive Bayes
