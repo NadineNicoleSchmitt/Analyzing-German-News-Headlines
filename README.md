@@ -392,14 +392,19 @@ When having a deeper look into the category **Coronavirus** in the years between
 
 ***
 ## Classification with Naive Bayes
+We have got some interesting results from our dictionary approach; however, we extend the dictionary analysis with a **supervised learning** approach (which can be conceptualized as a generalization of dictionary methods), in which the features associated with a category (here ``negative``) are learned directly from the data (rather than pre-specified by the researcher).
+	
+In order to do this we 
 
+	
+	
 ### Feature Selection with k fold cross validation
 
 <img src="https://github.com/NadineNicoleSchmitt/Analyzing-German-News-Headlines/blob/main/Classification_NaiveBayes/FeatureSelection.JPG" width="600">
 
 	
 <details>
-<summary>R code k fold cross validationy  </summary>.
+<summary>R code k fold cross validation  </summary>.
  
 ```markdown
 get_performance_scores <- function(held_out){
@@ -453,6 +458,7 @@ see full [Classification_NaiveBayesResults.pdf](https://github.com/NadineNicoleS
 ### Results Classification Naive Bayes
 
 ### Limitations Classification Naive Bayes
+- We only included 6 different dfms in our feature selection and we could do this with more dfms (e.g., trigram, trimming)
 - We used bag-of-words as input for our classifier; in a further analysis we should rather use word embeddings as input, which can lead to large performance gains because word embeddings allow for *automatic generalization* (e.g., we have a training corpus and learn that *horrible* is a good predictor for ``negative`` headlines, but we never observe the word *awful* in our training corpus; word embeddings would allow us to automatically generalise that because *horrible* is a good predictor, also *awful* have to be a good predictor because word embeddings tell us that these 2 words are used similary)
 - Going deeper, we should not only use Naive Bayes as classifier (to overcome for example the independence assumption (no interaction between words)), but classify our headlines with different classifiers (such as SVM, Random Forest, Neural Netwoks CNN, etc.) and use the one for which we get the best performance scores
 
